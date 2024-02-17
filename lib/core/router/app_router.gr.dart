@@ -45,6 +45,17 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const SpaServicesScreen(),
       );
     },
+    SpaSubservicesRoute.name: (routeData) {
+      final args = routeData.argsAs<SpaSubservicesRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: SpaSubservicesScreen(
+          key: args.key,
+          titleServices: args.titleServices,
+          subServicesList: args.subServicesList,
+        ),
+      );
+    },
   };
 }
 
@@ -116,4 +127,47 @@ class SpaServicesRoute extends PageRouteInfo<void> {
   static const String name = 'SpaServicesRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SpaSubservicesScreen]
+class SpaSubservicesRoute extends PageRouteInfo<SpaSubservicesRouteArgs> {
+  SpaSubservicesRoute({
+    Key? key,
+    required String titleServices,
+    required List<dynamic> subServicesList,
+    List<PageRouteInfo>? children,
+  }) : super(
+          SpaSubservicesRoute.name,
+          args: SpaSubservicesRouteArgs(
+            key: key,
+            titleServices: titleServices,
+            subServicesList: subServicesList,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'SpaSubservicesRoute';
+
+  static const PageInfo<SpaSubservicesRouteArgs> page =
+      PageInfo<SpaSubservicesRouteArgs>(name);
+}
+
+class SpaSubservicesRouteArgs {
+  const SpaSubservicesRouteArgs({
+    this.key,
+    required this.titleServices,
+    required this.subServicesList,
+  });
+
+  final Key? key;
+
+  final String titleServices;
+
+  final List<dynamic> subServicesList;
+
+  @override
+  String toString() {
+    return 'SpaSubservicesRouteArgs{key: $key, titleServices: $titleServices, subServicesList: $subServicesList}';
+  }
 }

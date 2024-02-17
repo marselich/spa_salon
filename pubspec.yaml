@@ -22,6 +22,9 @@ dependencies:
   json_annotation: ^4.8.1
   cached_network_image: ^3.3.1
   font_awesome_flutter: ^10.6.0
+  google_fonts: ^6.1.0
+  flutter_swipe: ^1.0.1
+  firebase_core: ^2.25.4
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +72,11 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
+
+  fonts:
+    - family:  SpaSalon
+      fonts:
+       - asset: assets/fonts/SpaSalon.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "145057621511",
+    "project_id": "spa-salon-flutter",
+    "storage_bucket": "spa-salon-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:145057621511:android:969d2708a9a2c144606ca2",
+        "android_client_info": {
+          "package_name": "com.example.spa_salon"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWHBmcPEdJFc0v0fOK-jYT39a5xkuIfKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
