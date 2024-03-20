@@ -1,82 +1,62 @@
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import 'package:spa_salon/core/presentation/widgets/spa_salon_card.dart';
 import 'package:spa_salon/core/router/app_router.dart';
+import 'package:spa_salon/features/spa_services/presentation/cubit/spa_services_cubit.dart';
 import 'package:spa_salon/features/spa_services/presentation/widgets/service_list_item.dart';
 
 @RoutePage()
-class SpaServicesScreen extends StatelessWidget {
+class SpaServicesScreen extends StatefulWidget {
   const SpaServicesScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final subServicesList = [
-      SpaSalonCard(
-        imageUrl:
-            "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
-        itemText: "Спортивный массаж",
-        priceText: "3000 Р",
-        onTap: () {},
-      ),
-      SpaSalonCard(
-        imageUrl:
-            "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
-        itemText: "Спортивный массаж",
-        priceText: "3000 Р",
-        onTap: () {},
-      ),
-      SpaSalonCard(
-        imageUrl:
-            "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
-        itemText: "Спортивный массаж",
-        priceText: "3000 Р",
-        onTap: () {},
-      ),
-    ];
-    final serviceList = [
-      ServiceListItem(
-        imageUrl:
-            "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
-        itemText: "Массаж",
-        onTap: () {
-          AutoRouter.of(context).push(
-            SpaSubservicesRoute(
-              titleServices: "Массаж",
-              subServicesList: subServicesList,
-            ),
-          );
-        },
-      ),
-      ServiceListItem(
-        imageUrl:
-            "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
-        itemText: "Массаж",
-        onTap: () {
-          AutoRouter.of(context).push(
-            SpaSubservicesRoute(
-              titleServices: "Массаж",
-              subServicesList: subServicesList,
-            ),
-          );
-        },
-      ),
-    ];
+  State<SpaServicesScreen> createState() => _SpaServicesScreenState();
+}
 
+class _SpaServicesScreenState extends State<SpaServicesScreen> {
+  final SpaServicesCubit _cubit = GetIt.I.get<SpaServicesCubit>();
+
+  @override
+  void initState() {
+    super.initState();
+    _cubit.getServices();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Услуги"),
       ),
-      body: ListView.separated(
-        itemBuilder: (context, index) {
-          return serviceList[index];
+      body: BlocBuilder<SpaServicesCubit, SpaServicesState>(
+        bloc: _cubit,
+        builder: (context, state) {
+          return state.maybeWhen(
+            loaded: (serviceList) {
+              return ListView.separated(
+                itemBuilder: (context, index) {
+                  final service = serviceList[index];
+                  return ServiceListItem(
+                    imageUrl: service.image,
+                    itemText: service.title,
+                    onTap: () {},
+                  );
+                },
+                separatorBuilder: (context, i) => const SizedBox(height: 10),
+                itemCount: serviceList.length,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 8,
+                  vertical: 16,
+                ),
+              );
+            },
+            loading: () => const Center(child: CircularProgressIndicator()),
+            orElse: () => Container(),
+          );
         },
-        separatorBuilder: (context, i) => const SizedBox(height: 10),
-        itemCount: serviceList.length,
-        padding: const EdgeInsets.symmetric(
-          horizontal: 8,
-          vertical: 16,
-        ),
       ),
     );
   }

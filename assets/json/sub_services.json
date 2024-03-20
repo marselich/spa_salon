@@ -1,0 +1,1022 @@
+[
+    {
+        "service_type": 0,
+        "title": "Лимфодренажный",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": [
+            "Эффект лифтинга, устранение отёчности, улучшение цвета лица"
+        ],
+        "price": [
+            {
+                "timePeriod": "1ч",
+                "amount": 4000
+            },
+            {
+                "timePeriod": "1ч30м",
+                "amount": 6000
+            },
+            {
+                "timePeriod": "2ч",
+                "amount": 8000
+            },
+            {
+                "timePeriod": "2ч30м",
+                "amount": 10000
+            }
+        ]
+    },
+    {
+        "service_type": 0,
+        "title": "Расслабляющий",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": ["Устранение тревожных мыслей и беспокойства, гипнотически нежный массаж"],
+        "price": [
+            {
+                "timePeriod": "1ч",
+                "amount": 4000
+            },
+            {
+                "timePeriod": "1ч30м",
+                "amount": 6000
+            },
+            {
+                "timePeriod": "2ч",
+                "amount": 8000
+            },
+            {
+                "timePeriod": "2ч30м",
+                "amount": 10000
+            }
+        ]
+    },
+     {
+        "service_type": 0,
+        "title": "Моделирующий",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": ["Глубокая проработка мышц, улучшение контура лица, устранение морщин, придание коже свежести"],
+        "price": [
+            {
+                "timePeriod": "1ч",
+                "amount": 4000
+            },
+            {
+                "timePeriod": "1ч30м",
+                "amount": 6000
+            },
+            {
+                "timePeriod": "2ч",
+                "amount": 8000
+            },
+            {
+                "timePeriod": "2ч30м",
+                "amount": 10000
+            }
+        ]
+    },
+     {
+        "service_type": 0,
+        "title": "Скульптурно-буккальный",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": ["Уменьшение объёма щёк, устранение морщин вокруг губы, полное расслабление лица"],
+        "price": [
+            {
+                "timePeriod": "1ч",
+                "amount": 4000
+            },
+            {
+                "timePeriod": "1ч30м",
+                "amount": 6000
+            },
+            {
+                "timePeriod": "2ч",
+                "amount": 8000
+            },
+            {
+                "timePeriod": "2ч30м",
+                "amount": 10000
+            }
+        ]
+    },
+    
+     {
+        "service_type": 1,
+        "title": "Уход на Christina",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": ["Глубокое воздействие на кожу и пролонгированный результат. Увлажнение, детокс, омоложение, питание и насыщение кислородом"],
+        "price": [
+            {
+                "timePeriod": "40м",
+                "amount": 4000
+            }
+        ]
+    },
+    {
+        "service_type": 1,
+        "title": "Уход на Bio Medical Care",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": ["Комплексная процедура, закрывающая все потребности кожи. Растительные экстракты увлажняют, восстанавливают и делают кожу нежной и бархатистой"],
+        "price": [
+            {
+                "timePeriod": "40м",
+                "amount": 4000
+            }
+        ]
+    },
+
+    {
+        "service_type": 2,
+        "title": "Оздоровительный массаж шеи и спины",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": ["Расслабление мышц, устранение боли и скованности, улучшение сна и повышение работоспособности"],
+        "price": [
+            {
+                "timePeriod": "1ч",
+                "amount": 4500
+            },
+            {
+                "timePeriod": "1ч30м",
+                "amount": 6700
+            },
+            {
+                "timePeriod": "2ч",
+                "amount": 9000
+            },
+            {
+                "timePeriod": "2ч30м",
+                "amount": 11000
+            }
+        ]
+    },
+    {
+        "service_type": 2,
+        "title": "Оздоровительный",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": ["Массаж всего тела, снижение психо-эмоционального напряжения, глубокая проработка мышц, избавление от болей в мышцах и переутомления"],
+        "price": [
+            {
+                "timePeriod": "1ч",
+                "amount": 5000
+            },
+            {
+                "timePeriod": "1ч30м",
+                "amount": 7500
+            },
+            {
+                "timePeriod": "2ч",
+                "amount": 10000
+            },
+            {
+                "timePeriod": "2ч30м",
+                "amount": 12500
+            }
+        ]
+    },
+    {
+        "service_type": 2,
+        "title": "Релаксирующий",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": ["Снятие стресса и напряжения, мягкая проработка мышц и нежные поглаживания, появление ощущения лёгкости во всём теле"],
+        "price": [
+            {
+                "timePeriod": "1ч",
+                "amount": 5000
+            },
+            {
+                "timePeriod": "1ч30м",
+                "amount": 7500
+            },
+            {
+                "timePeriod": "2ч",
+                "amount": 10000
+            },
+            {
+                "timePeriod": "2ч30м",
+                "amount": 12500
+            }
+        ]
+    },
+    {
+        "service_type": 2,
+        "title": "Лимфодренажный",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": ["Устранение отёчности и ускорение тока лимфы, улучшение кровообращения и обменных процессов втканях. Кожа становится упругой и сияющей"],
+        "price": [
+            {
+                "timePeriod": "1ч",
+                "amount": 5000
+            },
+            {
+                "timePeriod": "1ч30м",
+                "amount": 7500
+            },
+            {
+                "timePeriod": "2ч",
+                "amount": 10000
+            },
+            {
+                "timePeriod": "2ч30м",
+                "amount": 12500
+            }
+        ]
+    },
+    {
+        "service_type": 2,
+        "title": "Аромамассаж",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": ["Погружение в атмосферу безмятежности и спокойствия. Сочетание испанских релаксирующих техник по ароматному массажному крему и тёплому маслу арома-свечи"],
+        "price": [
+            {
+                "timePeriod": "1ч",
+                "amount": 5600
+            },
+            {
+                "timePeriod": "1ч30м",
+                "amount": 7500
+            },
+            {
+                "timePeriod": "2ч",
+                "amount": 10000
+            },
+            {
+                "timePeriod": "2ч30м",
+                "amount": 12500
+            }
+        ]
+    },
+    {
+        "service_type": 2,
+        "title": "Спортивный",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": ["Устранение напряжения и болей после физических нагрузок, подготовка организма к предстоящим тренировкам"],
+        "price": [
+            {
+                "timePeriod": "1ч",
+                "amount": 5600
+            },
+            {
+                "timePeriod": "1ч30м",
+                "amount": 8400
+            },
+            {
+                "timePeriod": "2ч",
+                "amount": 11200
+            },
+            {
+                "timePeriod": "2ч30м",
+                "amount": 14000
+            }
+        ]
+    },
+    {
+        "service_type": 2,
+        "title": "Антицеллюлитный",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": ["Устранение излишней жировой ткани. Кожа становится гладкой и нежной, приобретает здоровый оттенок"],
+        "price": [
+            {
+                "timePeriod": "1ч",
+                "amount": 5600
+            },
+            {
+                "timePeriod": "1ч30м",
+                "amount": 8400
+            },
+            {
+                "timePeriod": "2ч",
+                "amount": 11200
+            },
+            {
+                "timePeriod": "2ч30м",
+                "amount": 14000
+            }
+        ]
+    },
+
+    {
+        "service_type": 3,
+        "title": "Натуральный пилинг",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": [
+            "Способствует регенерации и обновлению кожи, она становится гладкой и сияющей",
+            "Манговый", "кокосовый", "шоколадный", "персиковый", "цитрусовый", "малиновый", "вишнёвый", "хвойный", "водорослевый", "ванильный", "лавандовый", "виноградный"
+        ],
+        "price": [
+            {
+                "timePeriod": "30м",
+                "amount": 4000
+            }
+        ]
+    },
+     {
+        "service_type": 3,
+        "title": "Маска для тела",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": [
+            "Улучшение состояния кожи, коррекция фигуры, снятие отёчности, восстановление, укрепление и питание тканей.",
+            "Антицеллюлитная", "увлажняющая", "омолаживающая", "оздоровительная", "лимфодренажная", "расслабляющая"
+        ],
+        "price": [
+            {
+                "timePeriod": "30м",
+                "amount": 4000
+            }
+        ]
+    },
+
+    {
+        "service_type": 4,
+        "title": "SPA-массаж",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": ["Микс оздоровительного и релаксирующего массажа вызовут невероятно приятные ощущения во всём теле. Массаж плавно перетекает в скрабирование с натуральными природными компонентами, а после горячего душа наносится питательный крем"],
+        "price": [
+            {
+                "timePeriod": "1ч30м",
+                "amount": 9000
+            },
+            {
+                "timePeriod": "2ч",
+                "amount": 12000
+            },
+            {
+                "timePeriod": "2ч30м",
+                "amount": 15000
+            },
+            {
+                "timePeriod": "3ч",
+                "amount": 18000
+            }
+        ]
+    },
+    {
+        "service_type": 4,
+        "title": "Время для себя",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": ["Максимальное расслабление в спа комплексе с нежным пилингом, авторским массажем всего тела, расслабляющим массажем лица, головы, кистей и стоп. Сеанс завершается увлажняющим лосьоном для тела и церемонией чаепития с десертом"],
+        "price": [
+            {
+                "timePeriod": "2ч",
+                "amount": 13000
+            },
+            {
+                "timePeriod": "3ч",
+                "amount": 19500
+            },
+            {
+                "timePeriod": "4ч",
+                "amount": 26000
+            }
+        ]
+    },
+
+    {
+        "service_type": 5,
+        "title": "\"Тонкий силуэт\"",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": [
+            "Интенсивная антицеллюлитная спа программа для тела",
+            "Моделирующий хвойный пилинг",
+            "Антицеллюлитный массаж всего тела",
+            "Горячее обёртывание с кембрийской глиной",
+            "Лимфодренажный массаж на лифтинг-креме",
+            "Церемония чаепития"
+        ],
+        "price": [
+            {
+                "timePeriod": "3ч",
+                "amount": 16000
+            }
+        ]
+    },
+    {
+        "service_type": 5,
+        "title": "\"Золотой имбирь\"",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": [
+            "Антицеллюлитная спа программа для тела",
+            "Мягкий антицеллюлитный крем-пилинг",
+            "Микс-массаж с коррекцией проблемных зон",
+            "Маска для тела \"Золотой имбирь\"",
+            "Контурирующий крем",
+            "Церемония чаепития"
+        ],
+        "price": [
+            {
+                "timePeriod": "3ч",
+                "amount": 16500
+            }
+        ]
+    },
+    {
+        "service_type": 5,
+        "title": "\"Виноградное SPA\"",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": [
+            "Омолаживающая спа программа для тела и лица",
+            "Массаж всего тела по винному крему",
+            "Обёртывание виноградной маской",
+            "Моделирующий массаж лица",
+            "Омолаживающий уход",
+            "Церемония чаепития"
+        ],
+        "price": [
+            {
+                "timePeriod": "2ч30м",
+                "amount": 15500
+            }
+        ]
+    },
+    {
+        "service_type": 5,
+        "title": "\"Второе дыхание\"",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": [
+            "Спа программа для оздоровления шейно-воротниковой зоны",
+            "Нежное очищение",
+            "Бальзам с растительными экстрактами",
+            "Оздоровительный массаж ШВЗ",
+            "Маска, устраняющая усталость и напряжение",
+            "Церемония чаепития"
+        ],
+        "price": [
+            {
+                "timePeriod": "1ч30м",
+                "amount": 8900
+            }
+        ]
+    },
+    {
+        "service_type": 5,
+        "title": "\"Лёгкая спина\"",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": [
+            "Спа программа, направленная на оздоровление спины",
+            "Нежное очищение",
+            "Травяной бальзам, снимающий напряжение",
+            "Оздоровительный массаж спины и шеи",
+            "Маска для спины с минералами",
+            "Церемония чаепития"
+        ],
+        "price": [
+            {
+                "timePeriod": "1ч30м",
+                "amount": 9000
+            }
+        ]
+    },
+    {
+        "service_type": 5,
+        "title": "\"Арома-релакс\"",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": [
+            "Арома-программа с акцентом на ШВЗ и стопы",
+            "Натуральный арома-пилинг всего тела",
+            "Массаж ШВЗ и стоп с аромасвечой",
+            "Крем для тела с эфирными маслами",
+            "Церемония чаепития"
+        ],
+        "price": [
+            {
+                "timePeriod": "2ч",
+                "amount": 10000
+            }
+        ]
+    },
+     {
+        "service_type": 5,
+        "title": "\"Горький шоколад\"",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": [
+            "Расслабляющая арома-программа для тела и лица",
+            "Шоколадный арома-пилинг",
+            "Массаж по шоколадной крем-маске",
+            "Расслабляющий массаж лица и головы",
+            "Крем для тела с питательными маслами",
+            "Церемония чаепития"
+        ],
+        "price": [
+            {
+                "timePeriod": "2ч30м",
+                "amount": 16000
+            }
+        ]
+    },
+    {
+        "service_type": 5,
+        "title": "\"Цветы и травы\"",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": [
+            "Восстанавливающая релаксирующая программа для тела",
+            "Паровая маска для глаз с эфирным маслом",
+            "Лимфодренажный массаж с релакс маслом",
+            "Релаксирующий массаж головы и стоп",
+            "Успокаивающее обёртывание для тела",
+            "Нежный восстанавливающий крем",
+            "Церемония чаепития"
+        ],
+        "price": [
+            {
+                "timePeriod": "2ч30м",
+                "amount": 14500
+            }
+        ]
+    },
+    {
+        "service_type": 5,
+        "title": "\"Сочное манго\"",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": [
+            "Питательная, увлажняющая спа-программа для тела",
+            "Увлажняющий гоммаж манговым молочком",
+            "Релакс-массаж всего тела с крем-маслом",
+            "Расслабляющий массаж стоп",
+            "Питательное манговое обёртывание тела",
+            "Церемония чаепития"
+        ],
+        "price": [
+            {
+                "timePeriod": "2ч",
+                "amount": 14000
+            }
+        ]
+    },
+    {
+        "service_type": 5,
+        "title": "\"Блаженство для рук\"",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": [
+            "Спа уход для ваших рук",
+            "Нежное очищение",
+            "Ванильный гоммаж для рук с маслами",
+            "Массаж кистей и предплечий на креме",
+            "Питательная маска для рук с экстрактом манго",
+            "Церемония чаепития"
+        ],
+        "price": [
+            {
+                "timePeriod": "1ч",
+                "amount": 6000
+            }
+        ]
+    },
+    {
+        "service_type": 5,
+        "title": "\"Блаженство для ног\"",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": [
+            "Спа уход для ваших ног",
+            "Нежное очищение",
+            "Пилинг для ног с цитрусовым гоммажом",
+            "Релакс-массаж ног и стоп с маслом миндаля",
+            "Питатательная маска для ног с манго",
+            "Церемония чаепития"
+        ],
+        "price": [
+            {
+                "timePeriod": "1ч",
+                "amount": 6000
+            }
+        ]
+    },
+    {
+        "service_type": 5,
+        "title": "\"Спа-десерт\"",
+        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "description": [
+            "Спа уход для ваших рук и ног",
+            "Паровая маска для глаз с эфирным маслом",
+            "Кокосовый арома-пилинг для рук и ног",
+            "Расслабляющий массаж кистей рук и стоп",
+            "Увлажняющая кокосовая маска для рук и стоп",
+            "Церемония чаепития с десертом"
+        ],
+        "price": [
+            {
+                "timePeriod": "1ч30м",
+                "amount": 8000
+            }
+        ]
+    },
+
+    {
+        "service_type": 6,
+        "title": "Лицо",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 2200
+            }
+        ]
+    },
+    {
+        "service_type": 6,
+        "title": "Брови",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 350
+            }
+        ]
+    },
+    {
+        "service_type": 6,
+        "title": "Верхняя губа",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 400
+            }
+        ]
+    },
+    {
+        "service_type": 6,
+        "title": "Нос",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 400
+            }
+        ]
+    },
+    {
+        "service_type": 6,
+        "title": "Шея",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 800
+            }
+        ]
+    },
+    {
+        "service_type": 6,
+        "title": "Грудь",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 1000
+            }
+        ]
+    },
+    {
+        "service_type": 6,
+        "title": "Живот",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 1500
+            }
+        ]
+    },
+    {
+        "service_type": 6,
+        "title": "Спина",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 3000
+            }
+        ]
+    },
+    {
+        "service_type": 6,
+        "title": "Подмышки",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 800
+            }
+        ]
+    },
+    {
+        "service_type": 6,
+        "title": "Руки",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 2000
+            }
+        ]
+    },
+    {
+        "service_type": 6,
+        "title": "Ноги",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 2700
+            }
+        ]
+    },
+    {
+        "service_type": 6,
+        "title": "Голени",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 1500
+            }
+        ]
+    },
+    {
+        "service_type": 6,
+        "title": "Ягодицы",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 1500
+            }
+        ]
+    },
+    {
+        "service_type": 6,
+        "title": "Бикини классическое",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 1700
+            }
+        ]
+    },
+    {
+        "service_type": 6,
+        "title": "Бикини глубокое",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 2400
+            }
+        ]
+    },
+    {
+        "service_type": 6,
+        "title": "Противовоспалительная маска",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 1500
+            }
+        ]
+    },
+    {
+        "service_type": 6,
+        "title": "Увлажняющая маска",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 1300
+            }
+        ]
+    },
+    {
+        "service_type": 6,
+        "title": "Энзимный пилинг",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 1000
+            }
+        ]
+    },
+
+    {
+        "service_type": 7,
+        "title": "Лицо",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 3000
+            }
+        ]
+    },
+    {
+        "service_type": 7,
+        "title": "Брови",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 600
+            }
+        ]
+    },
+    {
+        "service_type": 7,
+        "title": "Уши",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 500
+            }
+        ]
+    },
+    {
+        "service_type": 7,
+        "title": "Нос",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 500
+            }
+        ]
+    },
+    {
+        "service_type": 7,
+        "title": "Шея",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 1500
+            }
+        ]
+    },
+    {
+        "service_type": 7,
+        "title": "Грудь",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 2600
+            }
+        ]
+    },
+    {
+        "service_type": 7,
+        "title": "Живот",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 2000
+            }
+        ]
+    },
+    {
+        "service_type": 7,
+        "title": "Спина",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 3800
+            }
+        ]
+    },
+    {
+        "service_type": 7,
+        "title": "Подмышки",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 1200
+            }
+        ]
+    },
+    {
+        "service_type": 7,
+        "title": "Руки",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 2600
+            }
+        ]
+    },
+    {
+        "service_type": 7,
+        "title": "Ноги",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 3800
+            }
+        ]
+    },
+    {
+        "service_type": 7,
+        "title": "Ягодицы",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 2000
+            }
+        ]
+    },
+    {
+        "service_type": 7,
+        "title": "Пах классика",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 3000
+            }
+        ]
+    },
+    {
+        "service_type": 7,
+        "title": "Пах тотал",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 3500
+            }
+        ]
+    },
+    {
+        "service_type": 7,
+        "title": "Противовоспалительная маска",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 1500
+            }
+        ]
+    },
+    {
+        "service_type": 7,
+        "title": "Увлажняющая маска",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 1300
+            }
+        ]
+    },
+    {
+        "service_type": 7,
+        "title": "Энзимный пилинг",
+        "image_url": "",
+        "description": [],
+        "price": [
+            {
+                "timePeriod": "",
+                "amount": 1000
+            }
+        ]
+    }
+    
+]

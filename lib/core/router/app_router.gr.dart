@@ -135,7 +135,7 @@ class SpaSubservicesRoute extends PageRouteInfo<SpaSubservicesRouteArgs> {
   SpaSubservicesRoute({
     Key? key,
     required String titleServices,
-    required List<dynamic> subServicesList,
+    required List<SubserviceModel> subServicesList,
     List<PageRouteInfo>? children,
   }) : super(
           SpaSubservicesRoute.name,
@@ -164,7 +164,7 @@ class SpaSubservicesRouteArgs {
 
   final String titleServices;
 
-  final List<dynamic> subServicesList;
+  final List<SubserviceModel> subServicesList;
 
   @override
   String toString() {

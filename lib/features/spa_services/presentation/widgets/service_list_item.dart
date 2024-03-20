@@ -28,7 +28,9 @@ class ServiceListItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(15),
             image: DecorationImage(
               image: CachedNetworkImageProvider(
-                imageUrl,
+                imageUrl == ""
+                    ? "https://cs6.pikabu.ru/post_img/2015/07/04/10/1436029898_1190099444.jpg"
+                    : imageUrl,
               ),
               fit: BoxFit.cover,
             ),
