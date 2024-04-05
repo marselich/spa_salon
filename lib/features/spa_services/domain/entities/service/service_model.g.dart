@@ -8,6 +8,7 @@ part of 'service_model.dart';
 
 _$ServiceModelImpl _$$ServiceModelImplFromJson(Map<String, dynamic> json) =>
     _$ServiceModelImpl(
+      id: json['id'] as int? ?? 0,
       title: json['title'] as String? ?? "",
       image: json['image'] as String? ?? "",
       serviceType:
@@ -17,6 +18,7 @@ _$ServiceModelImpl _$$ServiceModelImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$ServiceModelImplToJson(_$ServiceModelImpl instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'title': instance.title,
       'image': instance.image,
       'serviceType': _$ServiceTypeEnumMap[instance.serviceType]!,

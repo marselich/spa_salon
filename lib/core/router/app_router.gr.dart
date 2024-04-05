@@ -27,6 +27,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const SpaAppScreen(),
       );
     },
+    SpaCartRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SpaCartScreen(),
+      );
+    },
     SpaOptionsRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -52,7 +58,7 @@ abstract class _$AppRouter extends RootStackRouter {
         child: SpaSubservicesScreen(
           key: args.key,
           titleServices: args.titleServices,
-          subServicesList: args.subServicesList,
+          serviceId: args.serviceId,
         ),
       );
     },
@@ -83,6 +89,20 @@ class SpaAppRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'SpaAppRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SpaCartScreen]
+class SpaCartRoute extends PageRouteInfo<void> {
+  const SpaCartRoute({List<PageRouteInfo>? children})
+      : super(
+          SpaCartRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SpaCartRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -135,14 +155,14 @@ class SpaSubservicesRoute extends PageRouteInfo<SpaSubservicesRouteArgs> {
   SpaSubservicesRoute({
     Key? key,
     required String titleServices,
-    required List<SubserviceModel> subServicesList,
+    required int serviceId,
     List<PageRouteInfo>? children,
   }) : super(
           SpaSubservicesRoute.name,
           args: SpaSubservicesRouteArgs(
             key: key,
             titleServices: titleServices,
-            subServicesList: subServicesList,
+            serviceId: serviceId,
           ),
           initialChildren: children,
         );
@@ -157,17 +177,17 @@ class SpaSubservicesRouteArgs {
   const SpaSubservicesRouteArgs({
     this.key,
     required this.titleServices,
-    required this.subServicesList,
+    required this.serviceId,
   });
 
   final Key? key;
 
   final String titleServices;
 
-  final List<SubserviceModel> subServicesList;
+  final int serviceId;
 
   @override
   String toString() {
-    return 'SpaSubservicesRouteArgs{key: $key, titleServices: $titleServices, subServicesList: $subServicesList}';
+    return 'SpaSubservicesRouteArgs{key: $key, titleServices: $titleServices, serviceId: $serviceId}';
   }
 }

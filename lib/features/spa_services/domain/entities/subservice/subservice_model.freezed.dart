@@ -20,12 +20,12 @@ SubserviceModel _$SubserviceModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$SubserviceModel {
+  int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
-  int get price =>
-      throw _privateConstructorUsedError; // создать объект прайса и таблицы для базы цен и описаний
+  List<SubservicePriceModel> get prices => throw _privateConstructorUsedError;
   ServiceType get serviceType => throw _privateConstructorUsedError;
-  List<String> get description => throw _privateConstructorUsedError;
+  List<String> get descriptions => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,11 +40,12 @@ abstract class $SubserviceModelCopyWith<$Res> {
       _$SubserviceModelCopyWithImpl<$Res, SubserviceModel>;
   @useResult
   $Res call(
-      {String title,
+      {int id,
+      String title,
       String imageUrl,
-      int price,
+      List<SubservicePriceModel> prices,
       ServiceType serviceType,
-      List<String> description});
+      List<String> descriptions});
 }
 
 /// @nodoc
@@ -60,13 +61,18 @@ class _$SubserviceModelCopyWithImpl<$Res, $Val extends SubserviceModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? title = null,
     Object? imageUrl = null,
-    Object? price = null,
+    Object? prices = null,
     Object? serviceType = null,
-    Object? description = null,
+    Object? descriptions = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -75,17 +81,17 @@ class _$SubserviceModelCopyWithImpl<$Res, $Val extends SubserviceModel>
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as int,
+      prices: null == prices
+          ? _value.prices
+          : prices // ignore: cast_nullable_to_non_nullable
+              as List<SubservicePriceModel>,
       serviceType: null == serviceType
           ? _value.serviceType
           : serviceType // ignore: cast_nullable_to_non_nullable
               as ServiceType,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      descriptions: null == descriptions
+          ? _value.descriptions
+          : descriptions // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ) as $Val);
   }
@@ -100,11 +106,12 @@ abstract class _$$SubserviceModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String title,
+      {int id,
+      String title,
       String imageUrl,
-      int price,
+      List<SubservicePriceModel> prices,
       ServiceType serviceType,
-      List<String> description});
+      List<String> descriptions});
 }
 
 /// @nodoc
@@ -118,13 +125,18 @@ class __$$SubserviceModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? title = null,
     Object? imageUrl = null,
-    Object? price = null,
+    Object? prices = null,
     Object? serviceType = null,
-    Object? description = null,
+    Object? descriptions = null,
   }) {
     return _then(_$SubserviceModelImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -133,17 +145,17 @@ class __$$SubserviceModelImplCopyWithImpl<$Res>
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as int,
+      prices: null == prices
+          ? _value._prices
+          : prices // ignore: cast_nullable_to_non_nullable
+              as List<SubservicePriceModel>,
       serviceType: null == serviceType
           ? _value.serviceType
           : serviceType // ignore: cast_nullable_to_non_nullable
               as ServiceType,
-      description: null == description
-          ? _value._description
-          : description // ignore: cast_nullable_to_non_nullable
+      descriptions: null == descriptions
+          ? _value._descriptions
+          : descriptions // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
   }
@@ -152,42 +164,52 @@ class __$$SubserviceModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SubserviceModelImpl implements _SubserviceModel {
-  _$SubserviceModelImpl(
-      {this.title = "",
+  const _$SubserviceModelImpl(
+      {this.id = 0,
+      this.title = "",
       this.imageUrl = "",
-      this.price = 0,
+      final List<SubservicePriceModel> prices = const [],
       this.serviceType = ServiceType.bodyCare,
-      final List<String> description = const []})
-      : _description = description;
+      final List<String> descriptions = const []})
+      : _prices = prices,
+        _descriptions = descriptions;
 
   factory _$SubserviceModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$SubserviceModelImplFromJson(json);
 
   @override
   @JsonKey()
+  final int id;
+  @override
+  @JsonKey()
   final String title;
   @override
   @JsonKey()
   final String imageUrl;
+  final List<SubservicePriceModel> _prices;
   @override
   @JsonKey()
-  final int price;
-// создать объект прайса и таблицы для базы цен и описаний
+  List<SubservicePriceModel> get prices {
+    if (_prices is EqualUnmodifiableListView) return _prices;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_prices);
+  }
+
   @override
   @JsonKey()
   final ServiceType serviceType;
-  final List<String> _description;
+  final List<String> _descriptions;
   @override
   @JsonKey()
-  List<String> get description {
-    if (_description is EqualUnmodifiableListView) return _description;
+  List<String> get descriptions {
+    if (_descriptions is EqualUnmodifiableListView) return _descriptions;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_description);
+    return EqualUnmodifiableListView(_descriptions);
   }
 
   @override
   String toString() {
-    return 'SubserviceModel(title: $title, imageUrl: $imageUrl, price: $price, serviceType: $serviceType, description: $description)';
+    return 'SubserviceModel(id: $id, title: $title, imageUrl: $imageUrl, prices: $prices, serviceType: $serviceType, descriptions: $descriptions)';
   }
 
   @override
@@ -195,20 +217,27 @@ class _$SubserviceModelImpl implements _SubserviceModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SubserviceModelImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
-            (identical(other.price, price) || other.price == price) &&
+            const DeepCollectionEquality().equals(other._prices, _prices) &&
             (identical(other.serviceType, serviceType) ||
                 other.serviceType == serviceType) &&
             const DeepCollectionEquality()
-                .equals(other._description, _description));
+                .equals(other._descriptions, _descriptions));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, title, imageUrl, price,
-      serviceType, const DeepCollectionEquality().hash(_description));
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      title,
+      imageUrl,
+      const DeepCollectionEquality().hash(_prices),
+      serviceType,
+      const DeepCollectionEquality().hash(_descriptions));
 
   @JsonKey(ignore: true)
   @override
@@ -226,26 +255,29 @@ class _$SubserviceModelImpl implements _SubserviceModel {
 }
 
 abstract class _SubserviceModel implements SubserviceModel {
-  factory _SubserviceModel(
-      {final String title,
+  const factory _SubserviceModel(
+      {final int id,
+      final String title,
       final String imageUrl,
-      final int price,
+      final List<SubservicePriceModel> prices,
       final ServiceType serviceType,
-      final List<String> description}) = _$SubserviceModelImpl;
+      final List<String> descriptions}) = _$SubserviceModelImpl;
 
   factory _SubserviceModel.fromJson(Map<String, dynamic> json) =
       _$SubserviceModelImpl.fromJson;
 
   @override
+  int get id;
+  @override
   String get title;
   @override
   String get imageUrl;
   @override
-  int get price;
-  @override // создать объект прайса и таблицы для базы цен и описаний
+  List<SubservicePriceModel> get prices;
+  @override
   ServiceType get serviceType;
   @override
-  List<String> get description;
+  List<String> get descriptions;
   @override
   @JsonKey(ignore: true)
   _$$SubserviceModelImplCopyWith<_$SubserviceModelImpl> get copyWith =>

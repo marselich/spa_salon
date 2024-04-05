@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/semantics.dart';
 import 'package:spa_salon/features/app/presentation/screens/spa_app_screen.dart';
+import 'package:spa_salon/features/cart/presentation/screens/spa_cart_screen.dart';
 import 'package:spa_salon/features/home/presentation/screens/home_screen.dart';
 import 'package:spa_salon/features/spa_options/presentation/screens/spa_options_screen.dart';
 import 'package:spa_salon/features/spa_products/presentation/screens/spa_products_screen.dart';
-import 'package:spa_salon/features/spa_services/domain/entities/subservice/subservice_model.dart';
 import 'package:spa_salon/features/spa_services/presentation/screens/spa_services_screen.dart';
 import 'package:spa_salon/features/spa_services/presentation/screens/spa_subservices_screen.dart';
 
@@ -29,6 +29,10 @@ class AppRouter extends _$AppRouter {
             AutoRoute(
               page: SpaProductsRoute.page,
               path: "products",
+            ),
+            AutoRoute(
+              page: SpaCartRoute.page,
+              path: "cart",
             ),
             AutoRoute(
               page: SpaOptionsRoute.page,

@@ -14,8 +14,12 @@ class ServicesRepositoryImpl implements ServicesRepository {
   }
 
   @override
-  Future<List<SubserviceModel>> getSubServices(int serviceId) {
-    // TODO: implement getSubServices
-    throw UnimplementedError();
+  Future<List<SubserviceModel>> getSubservices(int serviceId) async {
+    return await localDatasource.getSubservicesByServiceId(serviceId);
+  }
+
+  @override
+  Future<SubserviceModel> getSubserviceById(int subserviceId) async {
+    return await localDatasource.getSubserviceById(subserviceId);
   }
 }

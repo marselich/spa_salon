@@ -1,43 +1,70 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
-import 'package:spa_salon/core/presentation/widgets/spa_salon_card.dart';
-import 'package:spa_salon/features/spa_services/domain/entities/subservice/subservice_model.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
+import 'package:spa_salon/features/spa_services/presentation/cubit/spa_services/spa_services_cubit.dart';
+import 'package:spa_salon/features/spa_services/presentation/cubit/spa_subservices/spa_subservices_cubit.dart';
 import 'package:spa_salon/features/spa_services/presentation/widgets/service_list_item.dart';
 import 'package:spa_salon/features/spa_services/presentation/widgets/sub_service_container.dart';
 
 @RoutePage()
-class SpaSubservicesScreen extends StatelessWidget {
+class SpaSubservicesScreen extends StatefulWidget {
   const SpaSubservicesScreen({
     super.key,
     required this.titleServices,
-    required this.subServicesList,
+    required this.serviceId,
   });
 
   final String titleServices;
-  final List<SubserviceModel> subServicesList;
+  final int serviceId;
+
+  @override
+  State<SpaSubservicesScreen> createState() => _SpaSubservicesScreenState();
+}
+
+class _SpaSubservicesScreenState extends State<SpaSubservicesScreen> {
+  final SpaSubservicesCubit _cubit = GetIt.I.get<SpaSubservicesCubit>();
+
+  @override
+  void initState() {
+    _cubit.getSubservices(widget.serviceId);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(titleServices),
+        title: Text(widget.titleServices),
       ),
-      body: ListView.builder(
-        itemBuilder: (context, i) {
-          final subService = subServicesList[i];
-          return ServiceListItem(
-            imageUrl: subService.imageUrl,
-            itemText: subService.title,
-            onTap: () {
-              showBottomSheet(
-                context: context,
-                builder: (context) =>
-                    SubserviceContainer(subservice: subService),
+      body: BlocBuilder<SpaSubservicesCubit, SpaSubservicesState>(
+        bloc: _cubit,
+        builder: (context, state) {
+          return state.maybeWhen(
+            loaded: (subservices) {
+              return ListView.builder(
+                itemBuilder: (context, i) {
+                  final subService = subservices[i];
+                  return ServiceListItem(
+                    imageUrl: subService.imageUrl,
+                    itemText: subService.title,
+                    onTap: () async {
+                      final subservice =
+                          await _cubit.getSubseriveById(subService.id);
+                      showBottomSheet(
+                        context: context,
+                        builder: (context) =>
+                            SubserviceContainer(subservice: subservice),
+                      );
+                    },
+                  );
+                },
+                itemCount: subservices.length,
               );
             },
+            orElse: () => Container(),
           );
         },
-        itemCount: subServicesList.length,
       ),
     );
   }

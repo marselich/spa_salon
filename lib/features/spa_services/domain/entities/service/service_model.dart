@@ -8,6 +8,7 @@ part 'service_model.g.dart';
 class ServiceModel with _$ServiceModel {
   const ServiceModel._();
   const factory ServiceModel({
+    @Default(0) int id,
     @Default("") String title,
     @Default("") String image,
     @Default(ServiceType.bodyCare) ServiceType serviceType,
@@ -18,6 +19,7 @@ class ServiceModel with _$ServiceModel {
 
   factory ServiceModel.fromDatabaseRow(Map<String, Object?> json) {
     return ServiceModel(
+      id: json["service_id"] as int,
       title: json["title"] as String,
       image: json["image_url"] as String,
       serviceType: ServiceType.values[json["service_id"] as int],

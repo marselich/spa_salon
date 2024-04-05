@@ -15,6 +15,7 @@ class SpaAppScreen extends StatelessWidget {
         HomeRoute(),
         SpaServicesRoute(),
         SpaProductsRoute(),
+        SpaCartRoute(),
         SpaOptionsRoute(),
       ],
       lazyLoad: true,
@@ -49,6 +50,13 @@ class SpaAppScreen extends StatelessWidget {
                   child: Icon(SpaSalon.spa_products),
                 ),
                 label: "Товары",
+              ),
+              BottomNavigationBarItem(
+                icon: Padding(
+                  padding: EdgeInsets.only(bottom: 5),
+                  child: FaIcon(FontAwesomeIcons.cartShopping),
+                ),
+                label: "Корзина",
               ),
               BottomNavigationBarItem(
                 icon: Padding(

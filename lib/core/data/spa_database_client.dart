@@ -1,23 +1,31 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/services.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 class SpaDatabaseClient {
-  static const int DATABASE_VERSION = 2;
+  static const int DATABASE_VERSION = 1;
   static const String DATABASE_NAME = 'spa_salon.db';
   static const String SERIVCES_TABLE_NAME = 'services';
   static const String SUB_SERIVCES_TABLE_NAME = 'sub_services';
   static const String SUB_SERIVCE_PRICES_TABLE_NAME = 'sub_service_prices';
   static const String SUB_SERIVCE_DESCRIPTIONS_TABLE_NAME =
       'sub_service_descriptions';
+  static const String CART_NAME = 'cart';
 
   Future<Database> init() async {
+    // final path = join(await getDatabasesPath(), DATABASE_NAME);
+    // final file = File(path);
+    // await file.delete();
     final database = await _connect();
-    if (!(await databaseExists(
-        join(await getDatabasesPath(), DATABASE_NAME)))) {
-      _insertIntoDatabase(database);
+    final rowServiceCount =
+        await database.rawQuery("SELECT * from $SERIVCES_TABLE_NAME");
+    final rowSubserviceCount =
+        await database.rawQuery("SELECT * from $SUB_SERIVCES_TABLE_NAME");
+    if (rowServiceCount.isEmpty || rowSubserviceCount.isEmpty) {
+      await _insertIntoDatabase(database);
     }
     return database;
   }
@@ -27,14 +35,13 @@ class SpaDatabaseClient {
       join(await getDatabasesPath(), DATABASE_NAME),
       version: DATABASE_VERSION,
       onCreate: (db, version) async {
-        await db.execute(
-          //await rootBundle.loadString("assets/sql/db.sql"),
-          _createTables(),
-        );
+        await _createTables(db);
       },
       onUpgrade: (db, oldVersion, newVersion) async {
         await db.delete(SERIVCES_TABLE_NAME);
-        //await db.delete(SUB_SERIVCES_TABLE_NAME);
+        await db.delete(SUB_SERIVCES_TABLE_NAME);
+        await db.delete(SUB_SERIVCE_PRICES_TABLE_NAME);
+        await db.delete(SUB_SERIVCE_DESCRIPTIONS_TABLE_NAME);
         await _insertIntoDatabase(db);
       },
     );
@@ -51,7 +58,8 @@ class SpaDatabaseClient {
     final dataList = await json.decode(response) as List<dynamic>;
     dataList.forEach((element) async {
       final databaseItem = element as Map<String, dynamic>;
-      await database.insert(SERIVCES_TABLE_NAME, databaseItem);
+      await database.insert(SERIVCES_TABLE_NAME, databaseItem,
+          conflictAlgorithm: ConflictAlgorithm.replace);
     });
   }
 
@@ -61,61 +69,91 @@ class SpaDatabaseClient {
     final dataList = await json.decode(response) as List<dynamic>;
     dataList.forEach((element) async {
       final databaseItem = element as Map<String, dynamic>;
-      final pricesList = databaseItem["price"] as List<Map<String, dynamic>>;
-      final descriptionsList = databaseItem["description"] as List<String>;
+      final pricesList = databaseItem["price"] as List<dynamic>;
+      final descriptionsList = databaseItem["description"] as List<dynamic>;
 
       pricesList.forEach((price) async {
-        final newPrice = {
+        final newPrice = price as Map<String, dynamic>;
+        final newDataPrice = {
           "sub_service_id": databaseItem["sub_service_id"],
-          "time_period": price["timePeriod"],
-          "amount": price["amount"],
+          "time_period": newPrice["timePeriod"],
+          "amount": newPrice["amount"],
         };
-        await database.insert(SUB_SERIVCE_PRICES_TABLE_NAME, newPrice);
+        await database.insert(SUB_SERIVCE_PRICES_TABLE_NAME, newDataPrice);
       });
 
       descriptionsList.forEach((description) async {
-        final newDescription = {
+        final newDescription = description as String;
+        final newDataDescription = {
           "sub_service_id": databaseItem["sub_service_id"],
-          "description": description,
+          "description": newDescription,
         };
 
         await database.insert(
-            SUB_SERIVCE_DESCRIPTIONS_TABLE_NAME, newDescription);
+            SUB_SERIVCE_DESCRIPTIONS_TABLE_NAME, newDataDescription);
       });
+
+      final newSubservice = {
+        "sub_service_id": databaseItem["sub_service_id"],
+        "title": databaseItem["title"],
+        "image_url": databaseItem["image_url"],
+        "service_type": databaseItem["service_type"],
+      };
+      await database.insert(SUB_SERIVCES_TABLE_NAME, newSubservice);
     });
   }
 
-  static String _createTables() {
-    return ''' 
-    CREATE TABLE $SERIVCES_TABLE_NAME (
+  Future<void> _createTables(Database db) async {
+    await db.execute('''
+CREATE TABLE $SERIVCES_TABLE_NAME (
       service_id INTEGER PRIMARY KEY autoincrement,
       title TEXT,
       image_url TEXT
-    );
-    CREATE TABLE $SUB_SERIVCES_TABLE_NAME (
-      sub_service_id INT PRIMARY KEY autoincrement,
+    )
+    ''');
+
+    await db.execute('''
+CREATE TABLE $SUB_SERIVCES_TABLE_NAME (
+      sub_service_id INTEGER PRIMARY KEY autoincrement,
       title TEXT,
       image_url TEXT,
-      price TEXT,
       service_type INTEGER,
       FOREIGN KEY (service_type) 
           REFERENCES $SERIVCES_TABLE_NAME (service_id)
           ON DELETE CASCADE
-    );
-    CREATE TABLE $SUB_SERIVCE_PRICES_TABLE_NAME (
-      sub_service_id INT,
+    )
+    ''');
+
+    await db.execute('''
+CREATE TABLE $SUB_SERIVCE_PRICES_TABLE_NAME (
+      sub_service_id INTEGER,
       time_period TEXT,
-      amount INT,
+      amount INTEGER,
       FOREIGN KEY (sub_service_id) 
           REFERENCES $SUB_SERIVCES_TABLE_NAME (sub_service_id)
-    );
-    CREATE TABLE $SUB_SERIVCE_DESCRIPTIONS_TABLE_NAME (
-      sub_service_id INT,
+    )
+    ''');
+
+    await db.execute('''
+CREATE TABLE $SUB_SERIVCE_DESCRIPTIONS_TABLE_NAME (
+      sub_service_id INTEGER,
       description TEXT,
       FOREIGN KEY (sub_service_id) 
           REFERENCES $SUB_SERIVCES_TABLE_NAME (sub_service_id)
-    );
-  ''';
+    )
+    ''');
+
+    await db.execute('''
+CREATE TABLE $CART_NAME (
+      id INTEGER PRIMARY KEY autoincrement,
+      title TEXT,
+      image_url TEXT,
+      price_time TEXT,
+      count INTEGER,
+      type INTEGER
+    )
+    ''');
+
     // INSERT INTO services (service_id, title, imageUrl) VALUES (0, "Массаж для лица", "");
 // INSERT INTO services (service_id, title, imageUrl) VALUES (1, "Уход для лица", "");
 // INSERT INTO services (service_id, title, imageUrl) VALUES (2, "Массаж для тела", "");

@@ -1,0 +1,4 @@
+enum CartItemType {
+  service,
+  product,
+}

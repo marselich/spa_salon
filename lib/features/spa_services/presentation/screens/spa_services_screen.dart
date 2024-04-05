@@ -3,9 +3,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
-import 'package:spa_salon/core/presentation/widgets/spa_salon_card.dart';
 import 'package:spa_salon/core/router/app_router.dart';
-import 'package:spa_salon/features/spa_services/presentation/cubit/spa_services_cubit.dart';
+import 'package:spa_salon/features/spa_services/presentation/cubit/spa_services/spa_services_cubit.dart';
 import 'package:spa_salon/features/spa_services/presentation/widgets/service_list_item.dart';
 
 @RoutePage()
@@ -42,7 +41,14 @@ class _SpaServicesScreenState extends State<SpaServicesScreen> {
                   return ServiceListItem(
                     imageUrl: service.image,
                     itemText: service.title,
-                    onTap: () {},
+                    onTap: () {
+                      AutoRouter.of(context).navigate(
+                        SpaSubservicesRoute(
+                          titleServices: service.title,
+                          serviceId: service.id,
+                        ),
+                      );
+                    },
                   );
                 },
                 separatorBuilder: (context, i) => const SizedBox(height: 10),

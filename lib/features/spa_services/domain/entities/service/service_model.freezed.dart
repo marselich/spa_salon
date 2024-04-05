@@ -20,6 +20,7 @@ ServiceModel _$ServiceModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ServiceModel {
+  int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
   ServiceType get serviceType => throw _privateConstructorUsedError;
@@ -36,7 +37,7 @@ abstract class $ServiceModelCopyWith<$Res> {
           ServiceModel value, $Res Function(ServiceModel) then) =
       _$ServiceModelCopyWithImpl<$Res, ServiceModel>;
   @useResult
-  $Res call({String title, String image, ServiceType serviceType});
+  $Res call({int id, String title, String image, ServiceType serviceType});
 }
 
 /// @nodoc
@@ -52,11 +53,16 @@ class _$ServiceModelCopyWithImpl<$Res, $Val extends ServiceModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? title = null,
     Object? image = null,
     Object? serviceType = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -81,7 +87,7 @@ abstract class _$$ServiceModelImplCopyWith<$Res>
       __$$ServiceModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String title, String image, ServiceType serviceType});
+  $Res call({int id, String title, String image, ServiceType serviceType});
 }
 
 /// @nodoc
@@ -95,11 +101,16 @@ class __$$ServiceModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? title = null,
     Object? image = null,
     Object? serviceType = null,
   }) {
     return _then(_$ServiceModelImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -120,7 +131,8 @@ class __$$ServiceModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ServiceModelImpl extends _ServiceModel {
   const _$ServiceModelImpl(
-      {this.title = "",
+      {this.id = 0,
+      this.title = "",
       this.image = "",
       this.serviceType = ServiceType.bodyCare})
       : super._();
@@ -128,6 +140,9 @@ class _$ServiceModelImpl extends _ServiceModel {
   factory _$ServiceModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ServiceModelImplFromJson(json);
 
+  @override
+  @JsonKey()
+  final int id;
   @override
   @JsonKey()
   final String title;
@@ -140,7 +155,7 @@ class _$ServiceModelImpl extends _ServiceModel {
 
   @override
   String toString() {
-    return 'ServiceModel(title: $title, image: $image, serviceType: $serviceType)';
+    return 'ServiceModel(id: $id, title: $title, image: $image, serviceType: $serviceType)';
   }
 
   @override
@@ -148,6 +163,7 @@ class _$ServiceModelImpl extends _ServiceModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ServiceModelImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.image, image) || other.image == image) &&
             (identical(other.serviceType, serviceType) ||
@@ -156,7 +172,7 @@ class _$ServiceModelImpl extends _ServiceModel {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, title, image, serviceType);
+  int get hashCode => Object.hash(runtimeType, id, title, image, serviceType);
 
   @JsonKey(ignore: true)
   @override
@@ -174,7 +190,8 @@ class _$ServiceModelImpl extends _ServiceModel {
 
 abstract class _ServiceModel extends ServiceModel {
   const factory _ServiceModel(
-      {final String title,
+      {final int id,
+      final String title,
       final String image,
       final ServiceType serviceType}) = _$ServiceModelImpl;
   const _ServiceModel._() : super._();
@@ -182,6 +199,8 @@ abstract class _ServiceModel extends ServiceModel {
   factory _ServiceModel.fromJson(Map<String, dynamic> json) =
       _$ServiceModelImpl.fromJson;
 
+  @override
+  int get id;
   @override
   String get title;
   @override

@@ -3,5 +3,6 @@ import 'package:spa_salon/features/spa_services/domain/entities/subservice/subse
 
 abstract class ServicesRepository {
   Future<List<ServiceModel>> getServices();
-  Future<List<SubserviceModel>> getSubServices(int serviceId);
+  Future<List<SubserviceModel>> getSubservices(int serviceId);
+  Future<SubserviceModel> getSubserviceById(int subserviceId);
 }
