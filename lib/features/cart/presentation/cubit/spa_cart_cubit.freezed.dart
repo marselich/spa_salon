@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'spa_subservices_cubit.dart';
+part of 'spa_cart_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,32 +15,29 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$SpaSubservicesState {
+mixin _$SpaCartState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<SubserviceModel> subServices) loaded,
+    required TResult Function(List<CartItemModel> cartList) loaded,
     required TResult Function() loading,
     required TResult Function() loadingFailure,
-    required TResult Function(String text) showSubserviceSnackBar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<SubserviceModel> subServices)? loaded,
+    TResult? Function(List<CartItemModel> cartList)? loaded,
     TResult? Function()? loading,
     TResult? Function()? loadingFailure,
-    TResult? Function(String text)? showSubserviceSnackBar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<SubserviceModel> subServices)? loaded,
+    TResult Function(List<CartItemModel> cartList)? loaded,
     TResult Function()? loading,
     TResult Function()? loadingFailure,
-    TResult Function(String text)? showSubserviceSnackBar,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -50,8 +47,6 @@ mixin _$SpaSubservicesState {
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadingFailure value) loadingFailure,
-    required TResult Function(_ShowSubserviceSnackBar value)
-        showSubserviceSnackBar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,7 +55,6 @@ mixin _$SpaSubservicesState {
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadingFailure value)? loadingFailure,
-    TResult? Function(_ShowSubserviceSnackBar value)? showSubserviceSnackBar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,23 +63,22 @@ mixin _$SpaSubservicesState {
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadingFailure value)? loadingFailure,
-    TResult Function(_ShowSubserviceSnackBar value)? showSubserviceSnackBar,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SpaSubservicesStateCopyWith<$Res> {
-  factory $SpaSubservicesStateCopyWith(
-          SpaSubservicesState value, $Res Function(SpaSubservicesState) then) =
-      _$SpaSubservicesStateCopyWithImpl<$Res, SpaSubservicesState>;
+abstract class $SpaCartStateCopyWith<$Res> {
+  factory $SpaCartStateCopyWith(
+          SpaCartState value, $Res Function(SpaCartState) then) =
+      _$SpaCartStateCopyWithImpl<$Res, SpaCartState>;
 }
 
 /// @nodoc
-class _$SpaSubservicesStateCopyWithImpl<$Res, $Val extends SpaSubservicesState>
-    implements $SpaSubservicesStateCopyWith<$Res> {
-  _$SpaSubservicesStateCopyWithImpl(this._value, this._then);
+class _$SpaCartStateCopyWithImpl<$Res, $Val extends SpaCartState>
+    implements $SpaCartStateCopyWith<$Res> {
+  _$SpaCartStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -102,7 +95,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$SpaSubservicesStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$SpaCartStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -111,18 +104,12 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
+class _$InitialImpl implements _Initial {
   const _$InitialImpl();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SpaSubservicesState.initial()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'SpaSubservicesState.initial'));
+  String toString() {
+    return 'SpaCartState.initial()';
   }
 
   @override
@@ -138,10 +125,9 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<SubserviceModel> subServices) loaded,
+    required TResult Function(List<CartItemModel> cartList) loaded,
     required TResult Function() loading,
     required TResult Function() loadingFailure,
-    required TResult Function(String text) showSubserviceSnackBar,
   }) {
     return initial();
   }
@@ -150,10 +136,9 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<SubserviceModel> subServices)? loaded,
+    TResult? Function(List<CartItemModel> cartList)? loaded,
     TResult? Function()? loading,
     TResult? Function()? loadingFailure,
-    TResult? Function(String text)? showSubserviceSnackBar,
   }) {
     return initial?.call();
   }
@@ -162,10 +147,9 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<SubserviceModel> subServices)? loaded,
+    TResult Function(List<CartItemModel> cartList)? loaded,
     TResult Function()? loading,
     TResult Function()? loadingFailure,
-    TResult Function(String text)? showSubserviceSnackBar,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -181,8 +165,6 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadingFailure value) loadingFailure,
-    required TResult Function(_ShowSubserviceSnackBar value)
-        showSubserviceSnackBar,
   }) {
     return initial(this);
   }
@@ -194,7 +176,6 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadingFailure value)? loadingFailure,
-    TResult? Function(_ShowSubserviceSnackBar value)? showSubserviceSnackBar,
   }) {
     return initial?.call(this);
   }
@@ -206,7 +187,6 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadingFailure value)? loadingFailure,
-    TResult Function(_ShowSubserviceSnackBar value)? showSubserviceSnackBar,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -216,7 +196,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   }
 }
 
-abstract class _Initial implements SpaSubservicesState {
+abstract class _Initial implements SpaCartState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -226,12 +206,12 @@ abstract class _$$LoadedImplCopyWith<$Res> {
           _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
       __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<SubserviceModel> subServices});
+  $Res call({List<CartItemModel> cartList});
 }
 
 /// @nodoc
 class __$$LoadedImplCopyWithImpl<$Res>
-    extends _$SpaSubservicesStateCopyWithImpl<$Res, _$LoadedImpl>
+    extends _$SpaCartStateCopyWithImpl<$Res, _$LoadedImpl>
     implements _$$LoadedImplCopyWith<$Res> {
   __$$LoadedImplCopyWithImpl(
       _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
@@ -240,42 +220,34 @@ class __$$LoadedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? subServices = null,
+    Object? cartList = null,
   }) {
     return _then(_$LoadedImpl(
-      subServices: null == subServices
-          ? _value._subServices
-          : subServices // ignore: cast_nullable_to_non_nullable
-              as List<SubserviceModel>,
+      cartList: null == cartList
+          ? _value._cartList
+          : cartList // ignore: cast_nullable_to_non_nullable
+              as List<CartItemModel>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$LoadedImpl with DiagnosticableTreeMixin implements _Loaded {
-  const _$LoadedImpl({required final List<SubserviceModel> subServices})
-      : _subServices = subServices;
+class _$LoadedImpl implements _Loaded {
+  const _$LoadedImpl({required final List<CartItemModel> cartList})
+      : _cartList = cartList;
 
-  final List<SubserviceModel> _subServices;
+  final List<CartItemModel> _cartList;
   @override
-  List<SubserviceModel> get subServices {
-    if (_subServices is EqualUnmodifiableListView) return _subServices;
+  List<CartItemModel> get cartList {
+    if (_cartList is EqualUnmodifiableListView) return _cartList;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_subServices);
+    return EqualUnmodifiableListView(_cartList);
   }
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SpaSubservicesState.loaded(subServices: $subServices)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SpaSubservicesState.loaded'))
-      ..add(DiagnosticsProperty('subServices', subServices));
+  String toString() {
+    return 'SpaCartState.loaded(cartList: $cartList)';
   }
 
   @override
@@ -283,13 +255,12 @@ class _$LoadedImpl with DiagnosticableTreeMixin implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadedImpl &&
-            const DeepCollectionEquality()
-                .equals(other._subServices, _subServices));
+            const DeepCollectionEquality().equals(other._cartList, _cartList));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_subServices));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_cartList));
 
   @JsonKey(ignore: true)
   @override
@@ -301,38 +272,35 @@ class _$LoadedImpl with DiagnosticableTreeMixin implements _Loaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<SubserviceModel> subServices) loaded,
+    required TResult Function(List<CartItemModel> cartList) loaded,
     required TResult Function() loading,
     required TResult Function() loadingFailure,
-    required TResult Function(String text) showSubserviceSnackBar,
   }) {
-    return loaded(subServices);
+    return loaded(cartList);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<SubserviceModel> subServices)? loaded,
+    TResult? Function(List<CartItemModel> cartList)? loaded,
     TResult? Function()? loading,
     TResult? Function()? loadingFailure,
-    TResult? Function(String text)? showSubserviceSnackBar,
   }) {
-    return loaded?.call(subServices);
+    return loaded?.call(cartList);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<SubserviceModel> subServices)? loaded,
+    TResult Function(List<CartItemModel> cartList)? loaded,
     TResult Function()? loading,
     TResult Function()? loadingFailure,
-    TResult Function(String text)? showSubserviceSnackBar,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(subServices);
+      return loaded(cartList);
     }
     return orElse();
   }
@@ -344,8 +312,6 @@ class _$LoadedImpl with DiagnosticableTreeMixin implements _Loaded {
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadingFailure value) loadingFailure,
-    required TResult Function(_ShowSubserviceSnackBar value)
-        showSubserviceSnackBar,
   }) {
     return loaded(this);
   }
@@ -357,7 +323,6 @@ class _$LoadedImpl with DiagnosticableTreeMixin implements _Loaded {
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadingFailure value)? loadingFailure,
-    TResult? Function(_ShowSubserviceSnackBar value)? showSubserviceSnackBar,
   }) {
     return loaded?.call(this);
   }
@@ -369,7 +334,6 @@ class _$LoadedImpl with DiagnosticableTreeMixin implements _Loaded {
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadingFailure value)? loadingFailure,
-    TResult Function(_ShowSubserviceSnackBar value)? showSubserviceSnackBar,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -379,11 +343,11 @@ class _$LoadedImpl with DiagnosticableTreeMixin implements _Loaded {
   }
 }
 
-abstract class _Loaded implements SpaSubservicesState {
-  const factory _Loaded({required final List<SubserviceModel> subServices}) =
+abstract class _Loaded implements SpaCartState {
+  const factory _Loaded({required final List<CartItemModel> cartList}) =
       _$LoadedImpl;
 
-  List<SubserviceModel> get subServices;
+  List<CartItemModel> get cartList;
   @JsonKey(ignore: true)
   _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -398,7 +362,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$SpaSubservicesStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$SpaCartStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -407,18 +371,12 @@ class __$$LoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingImpl with DiagnosticableTreeMixin implements _Loading {
+class _$LoadingImpl implements _Loading {
   const _$LoadingImpl();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SpaSubservicesState.loading()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'SpaSubservicesState.loading'));
+  String toString() {
+    return 'SpaCartState.loading()';
   }
 
   @override
@@ -434,10 +392,9 @@ class _$LoadingImpl with DiagnosticableTreeMixin implements _Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<SubserviceModel> subServices) loaded,
+    required TResult Function(List<CartItemModel> cartList) loaded,
     required TResult Function() loading,
     required TResult Function() loadingFailure,
-    required TResult Function(String text) showSubserviceSnackBar,
   }) {
     return loading();
   }
@@ -446,10 +403,9 @@ class _$LoadingImpl with DiagnosticableTreeMixin implements _Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<SubserviceModel> subServices)? loaded,
+    TResult? Function(List<CartItemModel> cartList)? loaded,
     TResult? Function()? loading,
     TResult? Function()? loadingFailure,
-    TResult? Function(String text)? showSubserviceSnackBar,
   }) {
     return loading?.call();
   }
@@ -458,10 +414,9 @@ class _$LoadingImpl with DiagnosticableTreeMixin implements _Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<SubserviceModel> subServices)? loaded,
+    TResult Function(List<CartItemModel> cartList)? loaded,
     TResult Function()? loading,
     TResult Function()? loadingFailure,
-    TResult Function(String text)? showSubserviceSnackBar,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -477,8 +432,6 @@ class _$LoadingImpl with DiagnosticableTreeMixin implements _Loading {
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadingFailure value) loadingFailure,
-    required TResult Function(_ShowSubserviceSnackBar value)
-        showSubserviceSnackBar,
   }) {
     return loading(this);
   }
@@ -490,7 +443,6 @@ class _$LoadingImpl with DiagnosticableTreeMixin implements _Loading {
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadingFailure value)? loadingFailure,
-    TResult? Function(_ShowSubserviceSnackBar value)? showSubserviceSnackBar,
   }) {
     return loading?.call(this);
   }
@@ -502,7 +454,6 @@ class _$LoadingImpl with DiagnosticableTreeMixin implements _Loading {
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadingFailure value)? loadingFailure,
-    TResult Function(_ShowSubserviceSnackBar value)? showSubserviceSnackBar,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -512,7 +463,7 @@ class _$LoadingImpl with DiagnosticableTreeMixin implements _Loading {
   }
 }
 
-abstract class _Loading implements SpaSubservicesState {
+abstract class _Loading implements SpaCartState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -525,7 +476,7 @@ abstract class _$$LoadingFailureImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingFailureImplCopyWithImpl<$Res>
-    extends _$SpaSubservicesStateCopyWithImpl<$Res, _$LoadingFailureImpl>
+    extends _$SpaCartStateCopyWithImpl<$Res, _$LoadingFailureImpl>
     implements _$$LoadingFailureImplCopyWith<$Res> {
   __$$LoadingFailureImplCopyWithImpl(
       _$LoadingFailureImpl _value, $Res Function(_$LoadingFailureImpl) _then)
@@ -534,21 +485,12 @@ class __$$LoadingFailureImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingFailureImpl
-    with DiagnosticableTreeMixin
-    implements _LoadingFailure {
+class _$LoadingFailureImpl implements _LoadingFailure {
   const _$LoadingFailureImpl();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SpaSubservicesState.loadingFailure()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-        .add(DiagnosticsProperty('type', 'SpaSubservicesState.loadingFailure'));
+  String toString() {
+    return 'SpaCartState.loadingFailure()';
   }
 
   @override
@@ -564,10 +506,9 @@ class _$LoadingFailureImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<SubserviceModel> subServices) loaded,
+    required TResult Function(List<CartItemModel> cartList) loaded,
     required TResult Function() loading,
     required TResult Function() loadingFailure,
-    required TResult Function(String text) showSubserviceSnackBar,
   }) {
     return loadingFailure();
   }
@@ -576,10 +517,9 @@ class _$LoadingFailureImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<SubserviceModel> subServices)? loaded,
+    TResult? Function(List<CartItemModel> cartList)? loaded,
     TResult? Function()? loading,
     TResult? Function()? loadingFailure,
-    TResult? Function(String text)? showSubserviceSnackBar,
   }) {
     return loadingFailure?.call();
   }
@@ -588,10 +528,9 @@ class _$LoadingFailureImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<SubserviceModel> subServices)? loaded,
+    TResult Function(List<CartItemModel> cartList)? loaded,
     TResult Function()? loading,
     TResult Function()? loadingFailure,
-    TResult Function(String text)? showSubserviceSnackBar,
     required TResult orElse(),
   }) {
     if (loadingFailure != null) {
@@ -607,8 +546,6 @@ class _$LoadingFailureImpl
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadingFailure value) loadingFailure,
-    required TResult Function(_ShowSubserviceSnackBar value)
-        showSubserviceSnackBar,
   }) {
     return loadingFailure(this);
   }
@@ -620,7 +557,6 @@ class _$LoadingFailureImpl
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadingFailure value)? loadingFailure,
-    TResult? Function(_ShowSubserviceSnackBar value)? showSubserviceSnackBar,
   }) {
     return loadingFailure?.call(this);
   }
@@ -632,7 +568,6 @@ class _$LoadingFailureImpl
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadingFailure value)? loadingFailure,
-    TResult Function(_ShowSubserviceSnackBar value)? showSubserviceSnackBar,
     required TResult orElse(),
   }) {
     if (loadingFailure != null) {
@@ -642,174 +577,6 @@ class _$LoadingFailureImpl
   }
 }
 
-abstract class _LoadingFailure implements SpaSubservicesState {
+abstract class _LoadingFailure implements SpaCartState {
   const factory _LoadingFailure() = _$LoadingFailureImpl;
-}
-
-/// @nodoc
-abstract class _$$ShowSubserviceSnackBarImplCopyWith<$Res> {
-  factory _$$ShowSubserviceSnackBarImplCopyWith(
-          _$ShowSubserviceSnackBarImpl value,
-          $Res Function(_$ShowSubserviceSnackBarImpl) then) =
-      __$$ShowSubserviceSnackBarImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String text});
-}
-
-/// @nodoc
-class __$$ShowSubserviceSnackBarImplCopyWithImpl<$Res>
-    extends _$SpaSubservicesStateCopyWithImpl<$Res,
-        _$ShowSubserviceSnackBarImpl>
-    implements _$$ShowSubserviceSnackBarImplCopyWith<$Res> {
-  __$$ShowSubserviceSnackBarImplCopyWithImpl(
-      _$ShowSubserviceSnackBarImpl _value,
-      $Res Function(_$ShowSubserviceSnackBarImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? text = null,
-  }) {
-    return _then(_$ShowSubserviceSnackBarImpl(
-      text: null == text
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ShowSubserviceSnackBarImpl
-    with DiagnosticableTreeMixin
-    implements _ShowSubserviceSnackBar {
-  const _$ShowSubserviceSnackBarImpl({required this.text});
-
-  @override
-  final String text;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SpaSubservicesState.showSubserviceSnackBar(text: $text)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'SpaSubservicesState.showSubserviceSnackBar'))
-      ..add(DiagnosticsProperty('text', text));
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ShowSubserviceSnackBarImpl &&
-            (identical(other.text, text) || other.text == text));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, text);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ShowSubserviceSnackBarImplCopyWith<_$ShowSubserviceSnackBarImpl>
-      get copyWith => __$$ShowSubserviceSnackBarImplCopyWithImpl<
-          _$ShowSubserviceSnackBarImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(List<SubserviceModel> subServices) loaded,
-    required TResult Function() loading,
-    required TResult Function() loadingFailure,
-    required TResult Function(String text) showSubserviceSnackBar,
-  }) {
-    return showSubserviceSnackBar(text);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(List<SubserviceModel> subServices)? loaded,
-    TResult? Function()? loading,
-    TResult? Function()? loadingFailure,
-    TResult? Function(String text)? showSubserviceSnackBar,
-  }) {
-    return showSubserviceSnackBar?.call(text);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<SubserviceModel> subServices)? loaded,
-    TResult Function()? loading,
-    TResult Function()? loadingFailure,
-    TResult Function(String text)? showSubserviceSnackBar,
-    required TResult orElse(),
-  }) {
-    if (showSubserviceSnackBar != null) {
-      return showSubserviceSnackBar(text);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_LoadingFailure value) loadingFailure,
-    required TResult Function(_ShowSubserviceSnackBar value)
-        showSubserviceSnackBar,
-  }) {
-    return showSubserviceSnackBar(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_LoadingFailure value)? loadingFailure,
-    TResult? Function(_ShowSubserviceSnackBar value)? showSubserviceSnackBar,
-  }) {
-    return showSubserviceSnackBar?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_LoadingFailure value)? loadingFailure,
-    TResult Function(_ShowSubserviceSnackBar value)? showSubserviceSnackBar,
-    required TResult orElse(),
-  }) {
-    if (showSubserviceSnackBar != null) {
-      return showSubserviceSnackBar(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ShowSubserviceSnackBar implements SpaSubservicesState {
-  const factory _ShowSubserviceSnackBar({required final String text}) =
-      _$ShowSubserviceSnackBarImpl;
-
-  String get text;
-  @JsonKey(ignore: true)
-  _$$ShowSubserviceSnackBarImplCopyWith<_$ShowSubserviceSnackBarImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }

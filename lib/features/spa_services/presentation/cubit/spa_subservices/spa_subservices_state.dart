@@ -8,7 +8,7 @@ class SpaSubservicesState with _$SpaSubservicesState {
   }) = _Loaded;
   const factory SpaSubservicesState.loading() = _Loading;
   const factory SpaSubservicesState.loadingFailure() = _LoadingFailure;
-  const factory SpaSubservicesState.showSubserviceBottomSheet({
-    required SubserviceModel subservice,
-  }) = _ShowSubserviceBottomSheet;
+  const factory SpaSubservicesState.showSubserviceSnackBar({
+    required String text,
+  }) = _ShowSubserviceSnackBar;
 }

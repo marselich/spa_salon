@@ -14,8 +14,8 @@ class SpaAppScreen extends StatelessWidget {
       routes: const [
         HomeRoute(),
         SpaServicesRoute(),
-        SpaProductsRoute(),
         SpaCartRoute(),
+        SpaProductsRoute(),
         SpaOptionsRoute(),
       ],
       lazyLoad: true,
@@ -47,16 +47,16 @@ class SpaAppScreen extends StatelessWidget {
               BottomNavigationBarItem(
                 icon: Padding(
                   padding: EdgeInsets.only(bottom: 5),
-                  child: Icon(SpaSalon.spa_products),
+                  child: FaIcon(FontAwesomeIcons.cartShopping),
                 ),
-                label: "Товары",
+                label: "Корзина",
               ),
               BottomNavigationBarItem(
                 icon: Padding(
                   padding: EdgeInsets.only(bottom: 5),
-                  child: FaIcon(FontAwesomeIcons.cartShopping),
+                  child: Icon(SpaSalon.spa_products),
                 ),
-                label: "Корзина",
+                label: "Товары",
               ),
               BottomNavigationBarItem(
                 icon: Padding(
