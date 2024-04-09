@@ -21,7 +21,7 @@ SubservicePriceModel _$SubservicePriceModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$SubservicePriceModel {
   String get timePeriod => throw _privateConstructorUsedError;
-  int get price => throw _privateConstructorUsedError;
+  double get price => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $SubservicePriceModelCopyWith<$Res> {
           $Res Function(SubservicePriceModel) then) =
       _$SubservicePriceModelCopyWithImpl<$Res, SubservicePriceModel>;
   @useResult
-  $Res call({String timePeriod, int price});
+  $Res call({String timePeriod, double price});
 }
 
 /// @nodoc
@@ -63,7 +63,7 @@ class _$SubservicePriceModelCopyWithImpl<$Res,
       price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
     ) as $Val);
   }
 }
@@ -76,7 +76,7 @@ abstract class _$$SubservicePriceModelImplCopyWith<$Res>
       __$$SubservicePriceModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String timePeriod, int price});
+  $Res call({String timePeriod, double price});
 }
 
 /// @nodoc
@@ -101,7 +101,7 @@ class __$$SubservicePriceModelImplCopyWithImpl<$Res>
       price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
     ));
   }
 }
@@ -120,7 +120,7 @@ class _$SubservicePriceModelImpl extends _SubservicePriceModel {
   final String timePeriod;
   @override
   @JsonKey()
-  final int price;
+  final double price;
 
   @override
   String toString() {
@@ -158,7 +158,7 @@ class _$SubservicePriceModelImpl extends _SubservicePriceModel {
 }
 
 abstract class _SubservicePriceModel extends SubservicePriceModel {
-  factory _SubservicePriceModel({final String timePeriod, final int price}) =
+  factory _SubservicePriceModel({final String timePeriod, final double price}) =
       _$SubservicePriceModelImpl;
   _SubservicePriceModel._() : super._();
 
@@ -168,7 +168,7 @@ abstract class _SubservicePriceModel extends SubservicePriceModel {
   @override
   String get timePeriod;
   @override
-  int get price;
+  double get price;
   @override
   @JsonKey(ignore: true)
   _$$SubservicePriceModelImplCopyWith<_$SubservicePriceModelImpl>

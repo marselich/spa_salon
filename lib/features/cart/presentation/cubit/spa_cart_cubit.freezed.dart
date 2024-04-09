@@ -19,7 +19,8 @@ mixin _$SpaCartState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<CartItemModel> cartList) loaded,
+    required TResult Function(List<CartItemModel> cartList, double totalAmount)
+        loaded,
     required TResult Function() loading,
     required TResult Function() loadingFailure,
   }) =>
@@ -27,7 +28,7 @@ mixin _$SpaCartState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<CartItemModel> cartList)? loaded,
+    TResult? Function(List<CartItemModel> cartList, double totalAmount)? loaded,
     TResult? Function()? loading,
     TResult? Function()? loadingFailure,
   }) =>
@@ -35,7 +36,7 @@ mixin _$SpaCartState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<CartItemModel> cartList)? loaded,
+    TResult Function(List<CartItemModel> cartList, double totalAmount)? loaded,
     TResult Function()? loading,
     TResult Function()? loadingFailure,
     required TResult orElse(),
@@ -125,7 +126,8 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<CartItemModel> cartList) loaded,
+    required TResult Function(List<CartItemModel> cartList, double totalAmount)
+        loaded,
     required TResult Function() loading,
     required TResult Function() loadingFailure,
   }) {
@@ -136,7 +138,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<CartItemModel> cartList)? loaded,
+    TResult? Function(List<CartItemModel> cartList, double totalAmount)? loaded,
     TResult? Function()? loading,
     TResult? Function()? loadingFailure,
   }) {
@@ -147,7 +149,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<CartItemModel> cartList)? loaded,
+    TResult Function(List<CartItemModel> cartList, double totalAmount)? loaded,
     TResult Function()? loading,
     TResult Function()? loadingFailure,
     required TResult orElse(),
@@ -206,7 +208,7 @@ abstract class _$$LoadedImplCopyWith<$Res> {
           _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
       __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<CartItemModel> cartList});
+  $Res call({List<CartItemModel> cartList, double totalAmount});
 }
 
 /// @nodoc
@@ -221,12 +223,17 @@ class __$$LoadedImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? cartList = null,
+    Object? totalAmount = null,
   }) {
     return _then(_$LoadedImpl(
       cartList: null == cartList
           ? _value._cartList
           : cartList // ignore: cast_nullable_to_non_nullable
               as List<CartItemModel>,
+      totalAmount: null == totalAmount
+          ? _value.totalAmount
+          : totalAmount // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -234,7 +241,8 @@ class __$$LoadedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl({required final List<CartItemModel> cartList})
+  const _$LoadedImpl(
+      {required final List<CartItemModel> cartList, required this.totalAmount})
       : _cartList = cartList;
 
   final List<CartItemModel> _cartList;
@@ -246,8 +254,11 @@ class _$LoadedImpl implements _Loaded {
   }
 
   @override
+  final double totalAmount;
+
+  @override
   String toString() {
-    return 'SpaCartState.loaded(cartList: $cartList)';
+    return 'SpaCartState.loaded(cartList: $cartList, totalAmount: $totalAmount)';
   }
 
   @override
@@ -255,12 +266,14 @@ class _$LoadedImpl implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadedImpl &&
-            const DeepCollectionEquality().equals(other._cartList, _cartList));
+            const DeepCollectionEquality().equals(other._cartList, _cartList) &&
+            (identical(other.totalAmount, totalAmount) ||
+                other.totalAmount == totalAmount));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_cartList));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_cartList), totalAmount);
 
   @JsonKey(ignore: true)
   @override
@@ -272,35 +285,36 @@ class _$LoadedImpl implements _Loaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<CartItemModel> cartList) loaded,
+    required TResult Function(List<CartItemModel> cartList, double totalAmount)
+        loaded,
     required TResult Function() loading,
     required TResult Function() loadingFailure,
   }) {
-    return loaded(cartList);
+    return loaded(cartList, totalAmount);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<CartItemModel> cartList)? loaded,
+    TResult? Function(List<CartItemModel> cartList, double totalAmount)? loaded,
     TResult? Function()? loading,
     TResult? Function()? loadingFailure,
   }) {
-    return loaded?.call(cartList);
+    return loaded?.call(cartList, totalAmount);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<CartItemModel> cartList)? loaded,
+    TResult Function(List<CartItemModel> cartList, double totalAmount)? loaded,
     TResult Function()? loading,
     TResult Function()? loadingFailure,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(cartList);
+      return loaded(cartList, totalAmount);
     }
     return orElse();
   }
@@ -344,10 +358,12 @@ class _$LoadedImpl implements _Loaded {
 }
 
 abstract class _Loaded implements SpaCartState {
-  const factory _Loaded({required final List<CartItemModel> cartList}) =
-      _$LoadedImpl;
+  const factory _Loaded(
+      {required final List<CartItemModel> cartList,
+      required final double totalAmount}) = _$LoadedImpl;
 
   List<CartItemModel> get cartList;
+  double get totalAmount;
   @JsonKey(ignore: true)
   _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -392,7 +408,8 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<CartItemModel> cartList) loaded,
+    required TResult Function(List<CartItemModel> cartList, double totalAmount)
+        loaded,
     required TResult Function() loading,
     required TResult Function() loadingFailure,
   }) {
@@ -403,7 +420,7 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<CartItemModel> cartList)? loaded,
+    TResult? Function(List<CartItemModel> cartList, double totalAmount)? loaded,
     TResult? Function()? loading,
     TResult? Function()? loadingFailure,
   }) {
@@ -414,7 +431,7 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<CartItemModel> cartList)? loaded,
+    TResult Function(List<CartItemModel> cartList, double totalAmount)? loaded,
     TResult Function()? loading,
     TResult Function()? loadingFailure,
     required TResult orElse(),
@@ -506,7 +523,8 @@ class _$LoadingFailureImpl implements _LoadingFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<CartItemModel> cartList) loaded,
+    required TResult Function(List<CartItemModel> cartList, double totalAmount)
+        loaded,
     required TResult Function() loading,
     required TResult Function() loadingFailure,
   }) {
@@ -517,7 +535,7 @@ class _$LoadingFailureImpl implements _LoadingFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<CartItemModel> cartList)? loaded,
+    TResult? Function(List<CartItemModel> cartList, double totalAmount)? loaded,
     TResult? Function()? loading,
     TResult? Function()? loadingFailure,
   }) {
@@ -528,7 +546,7 @@ class _$LoadingFailureImpl implements _LoadingFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<CartItemModel> cartList)? loaded,
+    TResult Function(List<CartItemModel> cartList, double totalAmount)? loaded,
     TResult Function()? loading,
     TResult Function()? loadingFailure,
     required TResult orElse(),

@@ -11,7 +11,8 @@ _$CartItemModelImpl _$$CartItemModelImplFromJson(Map<String, dynamic> json) =>
       id: json['id'] as int? ?? 0,
       title: json['title'] as String? ?? "",
       imageUrl: json['imageUrl'] as String? ?? "",
-      priceTime: json['priceTime'] as String? ?? "",
+      price: (json['price'] as num?)?.toDouble() ?? 0,
+      timePeriod: json['timePeriod'] as String? ?? "",
       count: json['count'] as int? ?? 0,
       type: $enumDecodeNullable(_$CartItemTypeEnumMap, json['type']) ??
           CartItemType.service,
@@ -22,7 +23,8 @@ Map<String, dynamic> _$$CartItemModelImplToJson(_$CartItemModelImpl instance) =>
       'id': instance.id,
       'title': instance.title,
       'imageUrl': instance.imageUrl,
-      'priceTime': instance.priceTime,
+      'price': instance.price,
+      'timePeriod': instance.timePeriod,
       'count': instance.count,
       'type': _$CartItemTypeEnumMap[instance.type]!,
     };

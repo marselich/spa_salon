@@ -5,7 +5,8 @@ abstract class CartRepository {
   Future<void> insertCartItemInDatabase({
     required String title,
     required String imageUrl,
-    required String priceTime,
+    required double price,
+    required String? timePeriod,
     required int count,
     required CartItemType type,
   });
@@ -13,4 +14,6 @@ abstract class CartRepository {
   Future<List<CartItemModel>> getCartList();
 
   Future<void> deleteCartItem(int cartItemId);
+  Future<void> placeOrderViaWhatsApp(String message);
+  Future<void> deleteAllCartItems();
 }

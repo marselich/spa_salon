@@ -14,20 +14,52 @@ class SpaCartCubit extends Cubit<SpaCartState> {
   Future<void> getCartList() async {
     emit(const SpaCartState.loading());
     final cartList = await repository.getCartList();
-    emit(SpaCartState.loaded(cartList: cartList));
+    double totalAmount = 0;
+    for (var cartItem in cartList) {
+      totalAmount += cartItem.price;
+    }
+    emit(SpaCartState.loaded(cartList: cartList, totalAmount: totalAmount));
   }
 
   Future<void> deleteCartItem(int cartItemId) async {
     final loadedState = state as _Loaded;
-    emit(const SpaCartState.loading());
+    // emit(const SpaCartState.loading());
     await repository.deleteCartItem(cartItemId);
 
     final newCartList = loadedState.cartList.toList();
 
-    newCartList.removeWhere(
+    final deleteCartItem = newCartList.lastWhere(
       (cartItem) => cartItem.id == cartItemId,
     );
 
-    emit(SpaCartState.loaded(cartList: newCartList));
+    newCartList.remove(deleteCartItem);
+
+    // newCartList.removeWhere(
+    //   (cartItem) => cartItem.id == cartItemId,
+    // );
+    double newTotalAmount = loadedState.totalAmount - deleteCartItem.price;
+
+    emit(SpaCartState.loaded(
+      cartList: newCartList,
+      totalAmount: newTotalAmount,
+    ));
+  }
+
+  Future<void> checkout(
+      List<CartItemModel> cartList, double totalAmount) async {
+    emit(const SpaCartState.loading());
+    String message = "Здравствуйте, я бы хотел записаться на:\n";
+    for (var cartItem in cartList) {
+      message +=
+          "${cartItem.title} ${cartItem.price}₽ ${cartItem.timePeriod}\n";
+    }
+    message += "На итоговую сумму: $totalAmount₽\n";
+    message += "Когда я могу прийти?\n";
+    await repository.placeOrderViaWhatsApp(message);
+    emit(const SpaCartState.loaded(
+      cartList: [],
+      totalAmount: 0,
+    ));
+    await repository.deleteAllCartItems();
   }
 }

@@ -5,6 +5,7 @@ class SpaCartState with _$SpaCartState {
   const factory SpaCartState.initial() = _Initial;
   const factory SpaCartState.loaded({
     required List<CartItemModel> cartList,
+    required double totalAmount,
   }) = _Loaded;
   const factory SpaCartState.loading() = _Loading;
   const factory SpaCartState.loadingFailure() = _LoadingFailure;

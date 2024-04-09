@@ -43,7 +43,7 @@ class _SpaSubservicesScreenState extends State<SpaSubservicesScreen> {
         builder: (ctx, state) {
           return state.maybeWhen(
             loaded: (subservices) {
-              return ListView.builder(
+              return ListView.separated(
                 itemBuilder: (ctx, i) {
                   final subService = subservices[i];
                   return ServiceListItem(
@@ -63,6 +63,11 @@ class _SpaSubservicesScreenState extends State<SpaSubservicesScreen> {
                   );
                 },
                 itemCount: subservices.length,
+                separatorBuilder: (context, i) => const SizedBox(height: 10),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 8,
+                  vertical: 16,
+                ),
               );
             },
             loading: () => const SpaLoadingScreen(),

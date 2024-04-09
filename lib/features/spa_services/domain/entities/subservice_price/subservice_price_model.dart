@@ -8,7 +8,7 @@ class SubservicePriceModel with _$SubservicePriceModel {
   const SubservicePriceModel._();
   factory SubservicePriceModel({
     @Default("") String timePeriod,
-    @Default(0) int price,
+    @Default(0) double price,
   }) = _SubservicePriceModel;
 
   factory SubservicePriceModel.fromJson(Map<String, dynamic> json) =>
@@ -17,7 +17,7 @@ class SubservicePriceModel with _$SubservicePriceModel {
   factory SubservicePriceModel.fromDatabaseRow(Map<String, Object?> json) {
     return SubservicePriceModel(
       timePeriod: json["time_period"] as String,
-      price: json["amount"] as int,
+      price: json["amount"] as double,
     );
   }
 }

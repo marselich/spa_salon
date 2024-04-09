@@ -4,13 +4,16 @@ import 'package:spa_salon/core/utils/enums/cart_item_type.dart';
 import 'package:spa_salon/features/cart/domain/entities/cart_item/cart_item_model.dart';
 import 'package:spa_salon/features/cart/domain/repositories/cart_repository.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:whatsapp_unilink/whatsapp_unilink.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CartRepositoryImpl implements CartRepository {
   @override
   Future<void> insertCartItemInDatabase({
     required String title,
     required String imageUrl,
-    required String priceTime,
+    required double price,
+    required String? timePeriod,
     required int count,
     required CartItemType type,
   }) async {
@@ -20,7 +23,8 @@ class CartRepositoryImpl implements CartRepository {
       {
         'title': title,
         'image_url': imageUrl,
-        'price_time': priceTime,
+        'price': price,
+        'time_period': timePeriod,
         'count': count,
         'type': type.index,
       },
@@ -45,5 +49,24 @@ class CartRepositoryImpl implements CartRepository {
       where: "id = ?",
       whereArgs: [cartItemId],
     );
+  }
+
+  @override
+  Future<void> deleteAllCartItems() async {
+    final db = GetIt.I.get<Database>();
+    await db.delete(
+      SpaDatabaseClient.CART_NAME,
+    );
+  }
+
+  @override
+  Future<void> placeOrderViaWhatsApp(String message) async {
+    final link = WhatsAppUnilink(
+      phoneNumber: '+79990595839',
+      text: message,
+    );
+    // Convert the WhatsAppUnilink instance to a Uri.
+    // The "launch" method is part of "url_launcher".
+    await launchUrl(link.asUri());
   }
 }

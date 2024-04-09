@@ -12,7 +12,8 @@ class CartItemModel with _$CartItemModel {
     @Default(0) int id,
     @Default("") String title,
     @Default("") String imageUrl,
-    @Default("") String priceTime,
+    @Default(0) double price,
+    @Default("") String timePeriod,
     @Default(0) int count,
     @Default(CartItemType.service) CartItemType type,
   }) = _CartItemModel;
@@ -25,7 +26,8 @@ class CartItemModel with _$CartItemModel {
       id: json["id"] as int,
       title: json["title"] as String,
       imageUrl: json["image_url"] as String,
-      priceTime: json["price_time"] as String,
+      price: json["price"] as double,
+      timePeriod: json["time_period"] as String,
       count: json["count"] as int,
       type: CartItemType.values[json["type"] as int],
     );

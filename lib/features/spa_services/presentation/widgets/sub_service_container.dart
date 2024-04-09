@@ -27,12 +27,14 @@ class _SubserviceContainerState extends State<SubserviceContainer> {
   final SpaSubservicesCubit _cubit = GetIt.I.get<SpaSubservicesCubit>();
 
   SubservicePriceModel? priceView;
-  String priceTime = "";
+  double finalPrice = 0;
+  String? finalTimePeriod = "";
 
   @override
   void initState() {
     priceView = widget.subservice.prices.first;
-    priceTime = "${priceView?.price} ₽ ${priceView?.timePeriod}";
+    finalPrice = priceView?.price as double;
+    finalTimePeriod = priceView?.timePeriod;
     super.initState();
   }
 
@@ -45,9 +47,12 @@ class _SubserviceContainerState extends State<SubserviceContainer> {
           showSubserviceSnackBar: (text) async {
             final snackBar = SnackBar(
               content: Text(text),
+              duration: Durations.short2,
             );
             AutoRouter.of(context).pop();
-            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            ScaffoldMessenger.of(context).showSnackBar(
+              snackBar,
+            );
             await GetIt.I.get<SpaCartCubit>().getCartList();
           },
           orElse: () {},
@@ -87,8 +92,8 @@ class _SubserviceContainerState extends State<SubserviceContainer> {
                 onSelectionChanged: (priceItem) {
                   setState(() {
                     priceView = priceItem.first;
-                    priceTime =
-                        "${priceItem.first?.price} ₽ ${priceItem.first?.timePeriod}";
+                    finalPrice = priceItem.first?.price as double;
+                    finalTimePeriod = priceItem.first?.timePeriod;
                   });
                 },
                 showSelectedIcon: false,
@@ -129,7 +134,8 @@ class _SubserviceContainerState extends State<SubserviceContainer> {
                   await _cubit.createCartItem(
                     title: "${widget.serviceTitle} ${widget.subservice.title}",
                     imageUrl: widget.subservice.imageUrl,
-                    priceTime: priceTime,
+                    price: finalPrice,
+                    timePeriod: finalTimePeriod,
                     count: 1,
                     type: CartItemType.service,
                   );

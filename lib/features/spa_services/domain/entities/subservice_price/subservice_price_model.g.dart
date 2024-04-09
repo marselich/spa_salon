@@ -10,7 +10,7 @@ _$SubservicePriceModelImpl _$$SubservicePriceModelImplFromJson(
         Map<String, dynamic> json) =>
     _$SubservicePriceModelImpl(
       timePeriod: json['timePeriod'] as String? ?? "",
-      price: json['price'] as int? ?? 0,
+      price: (json['price'] as num?)?.toDouble() ?? 0,
     );
 
 Map<String, dynamic> _$$SubservicePriceModelImplToJson(

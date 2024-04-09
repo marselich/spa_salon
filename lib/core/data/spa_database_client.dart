@@ -128,7 +128,7 @@ CREATE TABLE $SUB_SERIVCES_TABLE_NAME (
 CREATE TABLE $SUB_SERIVCE_PRICES_TABLE_NAME (
       sub_service_id INTEGER,
       time_period TEXT,
-      amount INTEGER,
+      amount REAL,
       FOREIGN KEY (sub_service_id) 
           REFERENCES $SUB_SERIVCES_TABLE_NAME (sub_service_id)
     )
@@ -148,7 +148,8 @@ CREATE TABLE $CART_NAME (
       id INTEGER PRIMARY KEY autoincrement,
       title TEXT,
       image_url TEXT,
-      price_time TEXT,
+      price REAL,
+      time_period TEXT,
       count INTEGER,
       type INTEGER
     )

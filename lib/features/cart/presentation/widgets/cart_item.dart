@@ -22,7 +22,7 @@ class CartItem extends StatelessWidget {
         width: 65,
       ),
       title: Text(cartItem.title),
-      subtitle: Text(cartItem.priceTime),
+      subtitle: Text("${cartItem.price}₽ ${cartItem.timePeriod}"),
       trailing: IconButton(
         icon: const Icon(Icons.delete_rounded),
         onPressed: () async {

@@ -29,14 +29,16 @@ class SpaSubservicesCubit extends Cubit<SpaSubservicesState> {
   Future<void> createCartItem({
     required String title,
     required String imageUrl,
-    required String priceTime,
+    required double price,
+    String? timePeriod,
     required int count,
     required CartItemType type,
   }) async {
     await cartRepository.insertCartItemInDatabase(
       title: title,
       imageUrl: imageUrl,
-      priceTime: priceTime,
+      price: price,
+      timePeriod: timePeriod,
       count: count,
       type: type,
     );

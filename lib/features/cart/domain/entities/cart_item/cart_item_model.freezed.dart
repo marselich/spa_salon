@@ -23,7 +23,8 @@ mixin _$CartItemModel {
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
-  String get priceTime => throw _privateConstructorUsedError;
+  double get price => throw _privateConstructorUsedError;
+  String get timePeriod => throw _privateConstructorUsedError;
   int get count => throw _privateConstructorUsedError;
   CartItemType get type => throw _privateConstructorUsedError;
 
@@ -43,7 +44,8 @@ abstract class $CartItemModelCopyWith<$Res> {
       {int id,
       String title,
       String imageUrl,
-      String priceTime,
+      double price,
+      String timePeriod,
       int count,
       CartItemType type});
 }
@@ -64,7 +66,8 @@ class _$CartItemModelCopyWithImpl<$Res, $Val extends CartItemModel>
     Object? id = null,
     Object? title = null,
     Object? imageUrl = null,
-    Object? priceTime = null,
+    Object? price = null,
+    Object? timePeriod = null,
     Object? count = null,
     Object? type = null,
   }) {
@@ -81,9 +84,13 @@ class _$CartItemModelCopyWithImpl<$Res, $Val extends CartItemModel>
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      priceTime: null == priceTime
-          ? _value.priceTime
-          : priceTime // ignore: cast_nullable_to_non_nullable
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as double,
+      timePeriod: null == timePeriod
+          ? _value.timePeriod
+          : timePeriod // ignore: cast_nullable_to_non_nullable
               as String,
       count: null == count
           ? _value.count
@@ -109,7 +116,8 @@ abstract class _$$CartItemModelImplCopyWith<$Res>
       {int id,
       String title,
       String imageUrl,
-      String priceTime,
+      double price,
+      String timePeriod,
       int count,
       CartItemType type});
 }
@@ -128,7 +136,8 @@ class __$$CartItemModelImplCopyWithImpl<$Res>
     Object? id = null,
     Object? title = null,
     Object? imageUrl = null,
-    Object? priceTime = null,
+    Object? price = null,
+    Object? timePeriod = null,
     Object? count = null,
     Object? type = null,
   }) {
@@ -145,9 +154,13 @@ class __$$CartItemModelImplCopyWithImpl<$Res>
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      priceTime: null == priceTime
-          ? _value.priceTime
-          : priceTime // ignore: cast_nullable_to_non_nullable
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as double,
+      timePeriod: null == timePeriod
+          ? _value.timePeriod
+          : timePeriod // ignore: cast_nullable_to_non_nullable
               as String,
       count: null == count
           ? _value.count
@@ -168,7 +181,8 @@ class _$CartItemModelImpl extends _CartItemModel {
       {this.id = 0,
       this.title = "",
       this.imageUrl = "",
-      this.priceTime = "",
+      this.price = 0,
+      this.timePeriod = "",
       this.count = 0,
       this.type = CartItemType.service})
       : super._();
@@ -187,7 +201,10 @@ class _$CartItemModelImpl extends _CartItemModel {
   final String imageUrl;
   @override
   @JsonKey()
-  final String priceTime;
+  final double price;
+  @override
+  @JsonKey()
+  final String timePeriod;
   @override
   @JsonKey()
   final int count;
@@ -197,7 +214,7 @@ class _$CartItemModelImpl extends _CartItemModel {
 
   @override
   String toString() {
-    return 'CartItemModel(id: $id, title: $title, imageUrl: $imageUrl, priceTime: $priceTime, count: $count, type: $type)';
+    return 'CartItemModel(id: $id, title: $title, imageUrl: $imageUrl, price: $price, timePeriod: $timePeriod, count: $count, type: $type)';
   }
 
   @override
@@ -209,16 +226,17 @@ class _$CartItemModelImpl extends _CartItemModel {
             (identical(other.title, title) || other.title == title) &&
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
-            (identical(other.priceTime, priceTime) ||
-                other.priceTime == priceTime) &&
+            (identical(other.price, price) || other.price == price) &&
+            (identical(other.timePeriod, timePeriod) ||
+                other.timePeriod == timePeriod) &&
             (identical(other.count, count) || other.count == count) &&
             (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, title, imageUrl, priceTime, count, type);
+  int get hashCode => Object.hash(
+      runtimeType, id, title, imageUrl, price, timePeriod, count, type);
 
   @JsonKey(ignore: true)
   @override
@@ -239,7 +257,8 @@ abstract class _CartItemModel extends CartItemModel {
       {final int id,
       final String title,
       final String imageUrl,
-      final String priceTime,
+      final double price,
+      final String timePeriod,
       final int count,
       final CartItemType type}) = _$CartItemModelImpl;
   _CartItemModel._() : super._();
@@ -254,7 +273,9 @@ abstract class _CartItemModel extends CartItemModel {
   @override
   String get imageUrl;
   @override
-  String get priceTime;
+  double get price;
+  @override
+  String get timePeriod;
   @override
   int get count;
   @override
