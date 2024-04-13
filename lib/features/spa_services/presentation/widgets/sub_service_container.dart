@@ -40,6 +40,7 @@ class _SubserviceContainerState extends State<SubserviceContainer> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return BlocListener<SpaSubservicesCubit, SpaSubservicesState>(
       bloc: _cubit,
       listener: (ctx, state) {
@@ -47,9 +48,9 @@ class _SubserviceContainerState extends State<SubserviceContainer> {
           showSubserviceSnackBar: (text) async {
             final snackBar = SnackBar(
               content: Text(text),
-              duration: Durations.short2,
+              duration: Durations.long4,
             );
-            AutoRouter.of(context).pop();
+            AutoRouter.of(context).maybePop();
             ScaffoldMessenger.of(context).showSnackBar(
               snackBar,
             );
@@ -61,86 +62,222 @@ class _SubserviceContainerState extends State<SubserviceContainer> {
       child: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(
-            vertical: 16,
-            horizontal: 8,
+            vertical: 0,
+            horizontal: 0,
           ),
           child: Column(
             children: [
-              CachedNetworkImage(
-                imageUrl: widget.subservice.imageUrl == ""
-                    ? "https://cs6.pikabu.ru/post_img/2015/07/04/10/1436029898_1190099444.jpg"
-                    : widget.subservice.imageUrl,
-              ),
-              const SizedBox(height: 16),
-              Center(
-                child: Text(widget.subservice.title),
-              ),
-              const SizedBox(height: 8),
-              SegmentedButton(
-                segments: widget.subservice.prices.map((priceItem) {
-                  return ButtonSegment(
-                    value: priceItem,
-                    label: Column(
-                      children: [
-                        Text("${priceItem.price.toString()} ₽"),
-                        Text("За ${priceItem.timePeriod}"),
-                      ],
+              Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  ClipRRect(
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20),
                     ),
-                  );
-                }).toList(),
-                selected: {priceView},
-                onSelectionChanged: (priceItem) {
-                  setState(() {
-                    priceView = priceItem.first;
-                    finalPrice = priceItem.first?.price as double;
-                    finalTimePeriod = priceItem.first?.timePeriod;
-                  });
-                },
-                showSelectedIcon: false,
-                style: const ButtonStyle(
-                  alignment: Alignment.center,
-                  padding: MaterialStatePropertyAll(
-                    EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  ),
-                  textStyle: MaterialStatePropertyAll(
-                    TextStyle(
-                      fontSize: 12,
+                    // padding: const EdgeInsets.only(bottom: 0),
+                    child: CachedNetworkImage(
+                      imageUrl: widget.subservice.imageUrl == ""
+                          ? "https://cs6.pikabu.ru/post_img/2015/07/04/10/1436029898_1190099444.jpg"
+                          : widget.subservice.imageUrl,
+                      fit: BoxFit.cover,
+                      height: 300,
                     ),
                   ),
-                ),
-              ),
-              const SizedBox(height: 16),
-              widget.subservice.descriptions.isNotEmpty
-                  ? Text(widget.subservice.descriptions[0])
-                  : const Text(""),
-              const SizedBox(height: 16),
-              const VerticalDivider(),
-              const SizedBox(height: 16),
-              widget.subservice.descriptions.length > 1
-                  ? SizedBox(
-                      height: 200,
-                      child: ListView.builder(
-                        itemBuilder: (context, i) {
-                          return Text(
-                              "\u2022 ${widget.subservice.descriptions[i + 1]}");
-                        },
-                        itemCount: widget.subservice.descriptions.length - 1,
+                  Positioned(
+                    left: 0,
+                    right: 0,
+                    bottom: -1,
+                    child: Container(
+                      height: 20,
+                      decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          topRight: Radius.circular(20),
+                        ),
+                        color: theme.colorScheme.onPrimary,
                       ),
-                    )
-                  : Container(),
-              const SizedBox(height: 16),
-              FilledButton(
-                onPressed: () async {
-                  await _cubit.createCartItem(
-                    title: "${widget.serviceTitle} ${widget.subservice.title}",
-                    imageUrl: widget.subservice.imageUrl,
-                    price: finalPrice,
-                    timePeriod: finalTimePeriod,
-                    count: 1,
-                    type: CartItemType.service,
-                  );
-                },
-                child: const Text("Добавить в корзину"),
+                    ),
+                  ),
+                ],
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  color: theme.colorScheme.onPrimary,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Text(
+                              widget.subservice.title,
+                              style: theme.textTheme.titleLarge?.copyWith(
+                                color: theme.colorScheme.secondary,
+                                fontSize: 24,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 2),
+                          widget.subservice.descriptions.isNotEmpty
+                              ? Text(
+                                  widget.subservice.descriptions[0],
+                                  style: theme.textTheme.titleMedium?.copyWith(
+                                    color: Colors.black54,
+                                    fontSize: 16,
+                                  ),
+                                )
+                              : const Text(""),
+                          const SizedBox(height: 16),
+                          widget.subservice.descriptions.length > 1
+                              ? Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: widget.subservice.descriptions
+                                      .map((desc) {
+                                    if (desc !=
+                                        widget.subservice.descriptions[0]) {
+                                      return Text(
+                                        "\u2022 $desc",
+                                        style: theme.textTheme.titleMedium
+                                            ?.copyWith(
+                                          color: Colors.black54,
+                                          fontSize: 16,
+                                        ),
+                                      );
+                                    }
+                                    return Container();
+                                  }).toList(),
+                                )
+                              : Container(),
+                          // ? SizedBox(
+                          //     height: 100,
+                          //     child: ListView.builder(
+                          //       itemBuilder: (context, i) {
+                          //         return Text(
+                          //           "\u2022 ${widget.subservice.descriptions[i + 1]}",
+                          //           style: theme.textTheme.titleMedium
+                          //               ?.copyWith(
+                          //             color: Colors.black54,
+                          //             fontSize: 16,
+                          //           ),
+                          //         );
+                          //       },
+                          //       itemCount:
+                          //           widget.subservice.descriptions.length -
+                          //               1,
+                          //     ),
+                          //   )
+                          // : Container(),
+                          const SizedBox(height: 8),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Время:",
+                                style: theme.textTheme.titleMedium?.copyWith(
+                                  color: theme.colorScheme.secondary,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 22,
+                                ),
+                              ),
+                              const SizedBox(width: 16),
+                              SegmentedButton(
+                                segments:
+                                    widget.subservice.prices.map((priceItem) {
+                                  return ButtonSegment(
+                                    value: priceItem,
+                                    label: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        // Text("${priceItem.price.toString()} ₽"),
+                                        Text(
+                                          priceItem.timePeriod,
+                                          style: theme.textTheme.labelLarge
+                                              ?.copyWith(
+                                            color: theme.colorScheme.secondary,
+                                            fontSize: 18,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  );
+                                }).toList(),
+                                selected: {priceView},
+                                onSelectionChanged: (priceItem) {
+                                  setState(() {
+                                    priceView = priceItem.first;
+                                    finalPrice =
+                                        priceItem.first?.price as double;
+                                    finalTimePeriod =
+                                        priceItem.first?.timePeriod;
+                                  });
+                                },
+                                showSelectedIcon: false,
+                                style: const ButtonStyle(
+                                  alignment: Alignment.center,
+                                  padding: MaterialStatePropertyAll(
+                                    EdgeInsets.symmetric(
+                                        horizontal: 0, vertical: 0),
+                                  ),
+                                  // textStyle: MaterialStatePropertyAll(
+                                  //   theme.textTheme.labelLarge?.copyWith(
+                                  //     color: theme.colorScheme.secondary,
+                                  //     fontSize: 18,
+                                  //   ),
+                                  // ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    Container(
+                      padding: const EdgeInsets.all(16),
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          topRight: Radius.circular(20),
+                        ),
+                        color: Colors.white,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "${finalPrice.toString()} ₽",
+                            style: theme.textTheme.titleMedium?.copyWith(
+                              color: theme.colorScheme.secondary,
+                              fontSize: 26,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          FilledButton(
+                            onPressed: () async {
+                              await _cubit.createCartItem(
+                                title:
+                                    "${widget.serviceTitle} ${widget.subservice.title}",
+                                imageUrl: widget.subservice.imageUrl,
+                                price: finalPrice,
+                                timePeriod: finalTimePeriod,
+                                count: 1,
+                                type: CartItemType.service,
+                              );
+                            },
+                            child: const Text("Добавить в корзину"),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

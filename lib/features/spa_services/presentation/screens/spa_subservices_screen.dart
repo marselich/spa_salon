@@ -53,11 +53,15 @@ class _SpaSubservicesScreenState extends State<SpaSubservicesScreen> {
                       final subservice =
                           await _cubit.getSubseriveById(subService.id);
                       // ignore: use_build_context_synchronously
-                      Scaffold.of(ctx).showBottomSheet(
-                        (context) => SubserviceContainer(
+                      await showModalBottomSheet(
+                        context: ctx,
+                        builder: (context) => SubserviceContainer(
                           subservice: subservice,
                           serviceTitle: widget.titleServices,
                         ),
+                        useSafeArea: true,
+                        isScrollControlled: true,
+                        useRootNavigator: true,
                       );
                     },
                   );

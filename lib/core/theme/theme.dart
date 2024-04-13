@@ -6,6 +6,7 @@ final themeData = ThemeData(
     seedColor: const Color(0xfff4eed4),
     primary: const Color(0xfff4eed4),
     secondary: const Color(0xFF7E655E),
+    onPrimary: const Color.fromARGB(255, 244, 241, 228),
   ),
   useMaterial3: true,
   appBarTheme: AppBarTheme(
@@ -90,6 +91,10 @@ final themeData = ThemeData(
     labelMedium: GoogleFonts.ptSans(
       fontSize: 14,
       fontWeight: FontWeight.bold,
+    ),
+    bodyLarge: GoogleFonts.ptSans(
+      fontSize: 16,
+      fontWeight: FontWeight.normal,
     ),
   ),
 );
