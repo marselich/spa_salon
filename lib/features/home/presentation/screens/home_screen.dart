@@ -83,13 +83,13 @@ class HomeScreen extends StatelessWidget {
               delegate: SliverChildListDelegate(
                 [
                   FeaturedPageView(
-                    featuredPageViewTitle: 'Рекомендованные услуги',
+                    featuredPageViewTitle: 'Рекомендуемые услуги',
                     featuredCardList: serviceSwiperItems,
                     onViewAllButton: () {},
                   ),
                   const SizedBox(height: 15),
                   FeaturedPageView(
-                    featuredPageViewTitle: 'Рекомендованные товары',
+                    featuredPageViewTitle: 'Рекомендуемые услуги',
                     featuredCardList: serviceSwiperItems,
                     onViewAllButton: () {},
                   ),

@@ -48,13 +48,13 @@ class SpaCartCubit extends Cubit<SpaCartState> {
   Future<void> checkout(
       List<CartItemModel> cartList, double totalAmount) async {
     emit(const SpaCartState.loading());
-    String message = "Здравствуйте, я бы хотел записаться на:\n";
+    String message = "Здравствуйте, мне бы хотелось записаться на:\n";
     for (var cartItem in cartList) {
       message +=
           "${cartItem.title} ${cartItem.price}₽ ${cartItem.timePeriod}\n";
     }
     message += "На итоговую сумму: $totalAmount₽\n";
-    message += "Когда я могу прийти?\n";
+    message += "Когда и во сколько я могу прийти?\n";
     await repository.placeOrderViaWhatsApp(message);
     emit(const SpaCartState.loaded(
       cartList: [],

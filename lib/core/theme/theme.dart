@@ -25,7 +25,7 @@ final themeData = ThemeData(
     elevation: 5,
     backgroundColor: Colors.grey.shade100,
     unselectedItemColor: Colors.black26,
-    selectedItemColor: const Color(0xfff4eed4),
+    selectedItemColor: const Color(0xFF7E655E),
     type: BottomNavigationBarType.fixed,
     selectedIconTheme: const IconThemeData(
       shadows: [
