@@ -76,13 +76,25 @@ class _SubserviceContainerState extends State<SubserviceContainer> {
                       topRight: Radius.circular(20),
                     ),
                     // padding: const EdgeInsets.only(bottom: 0),
-                    child: CachedNetworkImage(
-                      imageUrl: widget.subservice.imageUrl == ""
-                          ? "https://cs6.pikabu.ru/post_img/2015/07/04/10/1436029898_1190099444.jpg"
-                          : widget.subservice.imageUrl,
-                      fit: BoxFit.cover,
-                      height: 300,
-                    ),
+                    child: widget.subservice.imageUrl == ""
+                        ? Image.network(
+                            "https://cs6.pikabu.ru/post_img/2015/07/04/10/1436029898_1190099444.jpg",
+                            fit: BoxFit.cover,
+                            height: 300,
+                          )
+                        : Image.asset(
+                            widget.subservice.imageUrl,
+                            fit: BoxFit.cover,
+                            height: 300,
+                            width: MediaQuery.of(context).size.width,
+                          ),
+                    // child: CachedNetworkImage( // TODO
+                    //   imageUrl: widget.subservice.imageUrl == ""
+                    //       ? "https://cs6.pikabu.ru/post_img/2015/07/04/10/1436029898_1190099444.jpg"
+                    //       : widget.subservice.imageUrl,
+                    //   fit: BoxFit.cover,
+                    //   height: 300,
+                    // ),
                   ),
                   Positioned(
                     left: 0,
@@ -154,87 +166,68 @@ class _SubserviceContainerState extends State<SubserviceContainer> {
                                   }).toList(),
                                 )
                               : Container(),
-                          // ? SizedBox(
-                          //     height: 100,
-                          //     child: ListView.builder(
-                          //       itemBuilder: (context, i) {
-                          //         return Text(
-                          //           "\u2022 ${widget.subservice.descriptions[i + 1]}",
-                          //           style: theme.textTheme.titleMedium
-                          //               ?.copyWith(
-                          //             color: Colors.black54,
-                          //             fontSize: 16,
-                          //           ),
-                          //         );
-                          //       },
-                          //       itemCount:
-                          //           widget.subservice.descriptions.length -
-                          //               1,
-                          //     ),
-                          //   )
-                          // : Container(),
                           const SizedBox(height: 8),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Время:",
-                                style: theme.textTheme.titleMedium?.copyWith(
-                                  color: theme.colorScheme.secondary,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 22,
-                                ),
-                              ),
-                              const SizedBox(width: 16),
-                              SegmentedButton(
-                                segments:
-                                    widget.subservice.prices.map((priceItem) {
-                                  return ButtonSegment(
-                                    value: priceItem,
-                                    label: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        // Text("${priceItem.price.toString()} ₽"),
-                                        Text(
-                                          priceItem.timePeriod,
-                                          style: theme.textTheme.labelLarge
-                                              ?.copyWith(
-                                            color: theme.colorScheme.secondary,
-                                            fontSize: 18,
-                                          ),
-                                        ),
-                                      ],
+                          widget.subservice.prices[0].timePeriod != ""
+                              ? Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "Время:",
+                                      style:
+                                          theme.textTheme.titleMedium?.copyWith(
+                                        color: theme.colorScheme.secondary,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 22,
+                                      ),
                                     ),
-                                  );
-                                }).toList(),
-                                selected: {priceView},
-                                onSelectionChanged: (priceItem) {
-                                  setState(() {
-                                    priceView = priceItem.first;
-                                    finalPrice =
-                                        priceItem.first?.price as double;
-                                    finalTimePeriod =
-                                        priceItem.first?.timePeriod;
-                                  });
-                                },
-                                showSelectedIcon: false,
-                                style: const ButtonStyle(
-                                  alignment: Alignment.center,
-                                  padding: MaterialStatePropertyAll(
-                                    EdgeInsets.symmetric(
-                                        horizontal: 0, vertical: 0),
-                                  ),
-                                  // textStyle: MaterialStatePropertyAll(
-                                  //   theme.textTheme.labelLarge?.copyWith(
-                                  //     color: theme.colorScheme.secondary,
-                                  //     fontSize: 18,
-                                  //   ),
-                                  // ),
-                                ),
-                              ),
-                            ],
-                          ),
+                                    const SizedBox(width: 16),
+                                    SegmentedButton(
+                                      segments: widget.subservice.prices
+                                          .map((priceItem) {
+                                        return ButtonSegment(
+                                          value: priceItem,
+                                          label: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              // Text("${priceItem.price.toString()} ₽"),
+                                              Text(
+                                                priceItem.timePeriod,
+                                                style: theme
+                                                    .textTheme.labelLarge
+                                                    ?.copyWith(
+                                                  color: theme
+                                                      .colorScheme.secondary,
+                                                  fontSize: 18,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        );
+                                      }).toList(),
+                                      selected: {priceView},
+                                      onSelectionChanged: (priceItem) {
+                                        setState(() {
+                                          priceView = priceItem.first;
+                                          finalPrice =
+                                              priceItem.first?.price as double;
+                                          finalTimePeriod =
+                                              priceItem.first?.timePeriod;
+                                        });
+                                      },
+                                      showSelectedIcon: false,
+                                      style: const ButtonStyle(
+                                        alignment: Alignment.center,
+                                        padding: MaterialStatePropertyAll(
+                                          EdgeInsets.symmetric(
+                                              horizontal: 0, vertical: 0),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              : const SizedBox(height: 0),
                         ],
                       ),
                     ),

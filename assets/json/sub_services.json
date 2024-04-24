@@ -3,7 +3,7 @@
         "sub_service_id": 0,
         "service_type": 0,
         "title": "Лимфодренажный",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice1.jpg",
         "description": [
             "Эффект лифтинга, устранение отёчности, улучшение цвета лица"
         ],
@@ -30,7 +30,7 @@
         "sub_service_id": 1,
         "service_type": 0,
         "title": "Расслабляющий",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice2.jpg",
         "description": ["Устранение тревожных мыслей и беспокойства, гипнотически нежный массаж"],
         "price": [
             {
@@ -55,7 +55,7 @@
         "sub_service_id": 2,
         "service_type": 0,
         "title": "Моделирующий",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice3.jpg",
         "description": ["Глубокая проработка мышц, улучшение контура лица, устранение морщин, придание коже свежести"],
         "price": [
             {
@@ -80,7 +80,7 @@
         "sub_service_id": 3,
         "service_type": 0,
         "title": "Скульптурно-буккальный",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice4.jpg",
         "description": ["Уменьшение объёма щёк, устранение морщин вокруг губы, полное расслабление лица"],
         "price": [
             {
@@ -106,7 +106,7 @@
         "sub_service_id": 4,
         "service_type": 1,
         "title": "Уход на Christina",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice5.jpg",
         "description": ["Глубокое воздействие на кожу и пролонгированный результат. Увлажнение, детокс, омоложение, питание и насыщение кислородом"],
         "price": [
             {
@@ -119,7 +119,7 @@
         "sub_service_id": 5,
         "service_type": 1,
         "title": "Уход на Bio Medical Care",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice6.jpg",
         "description": ["Комплексная процедура, закрывающая все потребности кожи. Растительные экстракты увлажняют, восстанавливают и делают кожу нежной и бархатистой"],
         "price": [
             {
@@ -133,7 +133,7 @@
         "sub_service_id": 6,
         "service_type": 2,
         "title": "Оздоровительный массаж шеи и спины",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice7.jpg",
         "description": ["Расслабление мышц, устранение боли и скованности, улучшение сна и повышение работоспособности"],
         "price": [
             {
@@ -158,7 +158,7 @@
         "sub_service_id": 7,
         "service_type": 2,
         "title": "Оздоровительный",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice8.jpg",
         "description": ["Массаж всего тела, снижение психо-эмоционального напряжения, глубокая проработка мышц, избавление от болей в мышцах и переутомления"],
         "price": [
             {
@@ -183,7 +183,7 @@
         "sub_service_id": 8,
         "service_type": 2,
         "title": "Релаксирующий",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice9.jpg",
         "description": ["Снятие стресса и напряжения, мягкая проработка мышц и нежные поглаживания, появление ощущения лёгкости во всём теле"],
         "price": [
             {
@@ -208,7 +208,7 @@
         "sub_service_id": 9,
         "service_type": 2,
         "title": "Лимфодренажный",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice10.jpg",
         "description": ["Устранение отёчности и ускорение тока лимфы, улучшение кровообращения и обменных процессов втканях. Кожа становится упругой и сияющей"],
         "price": [
             {
@@ -233,7 +233,7 @@
         "sub_service_id": 10,
         "service_type": 2,
         "title": "Аромамассаж",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice11.jpg",
         "description": ["Погружение в атмосферу безмятежности и спокойствия. Сочетание испанских релаксирующих техник по ароматному массажному крему и тёплому маслу арома-свечи"],
         "price": [
             {
@@ -258,7 +258,7 @@
         "sub_service_id": 11,
         "service_type": 2,
         "title": "Спортивный",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice12.jpg",
         "description": ["Устранение напряжения и болей после физических нагрузок, подготовка организма к предстоящим тренировкам"],
         "price": [
             {
@@ -283,7 +283,7 @@
         "sub_service_id": 12,
         "service_type": 2,
         "title": "Антицеллюлитный",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice13.jpg",
         "description": ["Устранение излишней жировой ткани. Кожа становится гладкой и нежной, приобретает здоровый оттенок"],
         "price": [
             {
@@ -309,7 +309,7 @@
         "sub_service_id": 13,
         "service_type": 3,
         "title": "Натуральный пилинг",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice14.jpg",
         "description": [
             "Способствует регенерации и обновлению кожи, она становится гладкой и сияющей",
             "Манговый", "кокосовый", "шоколадный", "персиковый", "цитрусовый", "малиновый", "вишнёвый", "хвойный", "водорослевый", "ванильный", "лавандовый", "виноградный"
@@ -325,7 +325,7 @@
         "sub_service_id": 14,
         "service_type": 3,
         "title": "Маска для тела",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice15.jpg",
         "description": [
             "Улучшение состояния кожи, коррекция фигуры, снятие отёчности, восстановление, укрепление и питание тканей.",
             "Антицеллюлитная", "увлажняющая", "омолаживающая", "оздоровительная", "лимфодренажная", "расслабляющая"
@@ -342,7 +342,7 @@
         "sub_service_id": 15,
         "service_type": 4,
         "title": "SPA-массаж",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice16.jpg",
         "description": ["Микс оздоровительного и релаксирующего массажа вызовут невероятно приятные ощущения во всём теле. Массаж плавно перетекает в скрабирование с натуральными природными компонентами, а после горячего душа наносится питательный крем"],
         "price": [
             {
@@ -367,7 +367,7 @@
         "sub_service_id": 16,
         "service_type": 4,
         "title": "Время для себя",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice17.jpg",
         "description": ["Максимальное расслабление в спа комплексе с нежным пилингом, авторским массажем всего тела, расслабляющим массажем лица, головы, кистей и стоп. Сеанс завершается увлажняющим лосьоном для тела и церемонией чаепития с десертом"],
         "price": [
             {
@@ -389,7 +389,7 @@
         "sub_service_id": 17,
         "service_type": 5,
         "title": "\"Тонкий силуэт\"",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice18.jpg",
         "description": [
             "Интенсивная антицеллюлитная спа программа для тела",
             "Моделирующий хвойный пилинг",
@@ -409,7 +409,7 @@
         "sub_service_id": 18,
         "service_type": 5,
         "title": "\"Золотой имбирь\"",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice19.jpg",
         "description": [
             "Антицеллюлитная спа программа для тела",
             "Мягкий антицеллюлитный крем-пилинг",
@@ -429,7 +429,7 @@
         "sub_service_id": 19,
         "service_type": 5,
         "title": "\"Виноградное SPA\"",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice20.jpg",
         "description": [
             "Омолаживающая спа программа для тела и лица",
             "Массаж всего тела по винному крему",
@@ -449,7 +449,7 @@
         "sub_service_id": 20,
         "service_type": 5,
         "title": "\"Второе дыхание\"",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice21.jpg",
         "description": [
             "Спа программа для оздоровления шейно-воротниковой зоны",
             "Нежное очищение",
@@ -469,7 +469,7 @@
         "sub_service_id": 21,
         "service_type": 5,
         "title": "\"Лёгкая спина\"",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice22.jpg",
         "description": [
             "Спа программа, направленная на оздоровление спины",
             "Нежное очищение",
@@ -489,7 +489,7 @@
         "sub_service_id": 22,
         "service_type": 5,
         "title": "\"Арома-релакс\"",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice23.jpg",
         "description": [
             "Арома-программа с акцентом на ШВЗ и стопы",
             "Натуральный арома-пилинг всего тела",
@@ -508,7 +508,7 @@
         "sub_service_id": 23,
         "service_type": 5,
         "title": "\"Горький шоколад\"",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice24.jpg",
         "description": [
             "Расслабляющая арома-программа для тела и лица",
             "Шоколадный арома-пилинг",
@@ -528,7 +528,7 @@
         "sub_service_id": 24,
         "service_type": 5,
         "title": "\"Цветы и травы\"",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice25.jpg",
         "description": [
             "Восстанавливающая релаксирующая программа для тела",
             "Паровая маска для глаз с эфирным маслом",
@@ -549,7 +549,7 @@
         "sub_service_id": 25,
         "service_type": 5,
         "title": "\"Сочное манго\"",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice26.jpg",
         "description": [
             "Питательная, увлажняющая спа-программа для тела",
             "Увлажняющий гоммаж манговым молочком",
@@ -569,7 +569,7 @@
         "sub_service_id": 26,
         "service_type": 5,
         "title": "\"Блаженство для рук\"",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice27.jpg",
         "description": [
             "Спа уход для ваших рук",
             "Нежное очищение",
@@ -589,7 +589,7 @@
         "sub_service_id": 27,
         "service_type": 5,
         "title": "\"Блаженство для ног\"",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice28.jpg",
         "description": [
             "Спа уход для ваших ног",
             "Нежное очищение",
@@ -609,7 +609,7 @@
         "sub_service_id": 28,
         "service_type": 5,
         "title": "\"Спа-десерт\"",
-        "image_url": "https://actual-cosmetology.ru/wp-content/uploads/2022/08/7-1.jpg",
+        "image_url": "assets/img/subservice29.jpg",
         "description": [
             "Спа уход для ваших рук и ног",
             "Паровая маска для глаз с эфирным маслом",
@@ -630,7 +630,7 @@
         "sub_service_id": 29,
         "service_type": 6,
         "title": "Лицо",
-        "image_url": "",
+        "image_url": "assets/img/subservice30.jpg",
         "description": [],
         "price": [
             {
@@ -643,7 +643,7 @@
         "sub_service_id": 30,
         "service_type": 6,
         "title": "Брови",
-        "image_url": "",
+        "image_url": "assets/img/subservice31.jpg",
         "description": [],
         "price": [
             {
@@ -656,7 +656,7 @@
         "sub_service_id": 31,
         "service_type": 6,
         "title": "Верхняя губа",
-        "image_url": "",
+        "image_url": "assets/img/subservice32.jpg",
         "description": [],
         "price": [
             {
@@ -669,7 +669,7 @@
         "sub_service_id": 32,
         "service_type": 6,
         "title": "Нос",
-        "image_url": "",
+        "image_url": "assets/img/subservice33.jpg",
         "description": [],
         "price": [
             {
@@ -682,7 +682,7 @@
         "sub_service_id": 33,
         "service_type": 6,
         "title": "Шея",
-        "image_url": "",
+        "image_url": "assets/img/subservice34.jpg",
         "description": [],
         "price": [
             {
@@ -695,7 +695,7 @@
         "sub_service_id": 34,
         "service_type": 6,
         "title": "Грудь",
-        "image_url": "",
+        "image_url": "assets/img/subservice35.jpg",
         "description": [],
         "price": [
             {
@@ -708,7 +708,7 @@
         "sub_service_id": 35,
         "service_type": 6,
         "title": "Живот",
-        "image_url": "",
+        "image_url": "assets/img/subservice36.jpg",
         "description": [],
         "price": [
             {
@@ -721,7 +721,7 @@
         "sub_service_id": 36,
         "service_type": 6,
         "title": "Спина",
-        "image_url": "",
+        "image_url": "assets/img/subservice37.jpg",
         "description": [],
         "price": [
             {
@@ -734,7 +734,7 @@
         "sub_service_id": 37,
         "service_type": 6,
         "title": "Подмышки",
-        "image_url": "",
+        "image_url": "assets/img/subservice38.jpg",
         "description": [],
         "price": [
             {
@@ -747,7 +747,7 @@
         "sub_service_id": 38,
         "service_type": 6,
         "title": "Руки",
-        "image_url": "",
+        "image_url": "assets/img/subservice39.jpg",
         "description": [],
         "price": [
             {
@@ -760,7 +760,7 @@
         "sub_service_id": 39,
         "service_type": 6,
         "title": "Ноги",
-        "image_url": "",
+        "image_url": "assets/img/subservice40.jpg",
         "description": [],
         "price": [
             {
@@ -773,7 +773,7 @@
         "sub_service_id": 40,
         "service_type": 6,
         "title": "Голени",
-        "image_url": "",
+        "image_url": "assets/img/subservice41.jpg",
         "description": [],
         "price": [
             {
@@ -786,7 +786,7 @@
         "sub_service_id": 41,
         "service_type": 6,
         "title": "Ягодицы",
-        "image_url": "",
+        "image_url": "assets/img/subservice42.jpg",
         "description": [],
         "price": [
             {
@@ -799,7 +799,7 @@
         "sub_service_id": 42,
         "service_type": 6,
         "title": "Бикини классическое",
-        "image_url": "",
+        "image_url": "assets/img/subservice43.jpg",
         "description": [],
         "price": [
             {
@@ -812,7 +812,7 @@
         "sub_service_id": 43,
         "service_type": 6,
         "title": "Бикини глубокое",
-        "image_url": "",
+        "image_url": "assets/img/subservice44.jpg",
         "description": [],
         "price": [
             {
@@ -825,7 +825,7 @@
         "sub_service_id": 44,
         "service_type": 6,
         "title": "Противовоспалительная маска",
-        "image_url": "",
+        "image_url": "assets/img/subservice45.jpg",
         "description": [],
         "price": [
             {
@@ -838,7 +838,7 @@
         "sub_service_id": 45,
         "service_type": 6,
         "title": "Увлажняющая маска",
-        "image_url": "",
+        "image_url": "assets/img/subservice45.jpg",
         "description": [],
         "price": [
             {
@@ -851,7 +851,7 @@
         "sub_service_id": 46,
         "service_type": 6,
         "title": "Энзимный пилинг",
-        "image_url": "",
+        "image_url": "assets/img/subservice47.jpg",
         "description": [],
         "price": [
             {
@@ -865,7 +865,7 @@
         "sub_service_id": 47,
         "service_type": 7,
         "title": "Лицо",
-        "image_url": "",
+        "image_url": "assets/img/subservice48.jpg",
         "description": [],
         "price": [
             {
@@ -878,7 +878,7 @@
         "sub_service_id": 48,
         "service_type": 7,
         "title": "Брови",
-        "image_url": "",
+        "image_url": "assets/img/subservice49.jpg",
         "description": [],
         "price": [
             {
@@ -891,7 +891,7 @@
         "sub_service_id": 49,
         "service_type": 7,
         "title": "Уши",
-        "image_url": "",
+        "image_url": "assets/img/subservice50.jpg",
         "description": [],
         "price": [
             {
@@ -904,7 +904,7 @@
         "sub_service_id": 50,
         "service_type": 7,
         "title": "Нос",
-        "image_url": "",
+        "image_url": "assets/img/subservice51.jpg",
         "description": [],
         "price": [
             {
@@ -917,7 +917,7 @@
         "sub_service_id": 51,
         "service_type": 7,
         "title": "Шея",
-        "image_url": "",
+        "image_url": "assets/img/subservice52.jpg",
         "description": [],
         "price": [
             {
@@ -930,7 +930,7 @@
         "sub_service_id": 52,
         "service_type": 7,
         "title": "Грудь",
-        "image_url": "",
+        "image_url": "assets/img/subservice53.jpg",
         "description": [],
         "price": [
             {
@@ -943,7 +943,7 @@
         "sub_service_id": 53,
         "service_type": 7,
         "title": "Живот",
-        "image_url": "",
+        "image_url": "assets/img/subservice54.jpg",
         "description": [],
         "price": [
             {
@@ -956,7 +956,7 @@
         "sub_service_id": 54,
         "service_type": 7,
         "title": "Спина",
-        "image_url": "",
+        "image_url": "assets/img/subservice55.jpg",
         "description": [],
         "price": [
             {
@@ -969,7 +969,7 @@
         "sub_service_id": 55,
         "service_type": 7,
         "title": "Подмышки",
-        "image_url": "",
+        "image_url": "assets/img/subservice56.jpg",
         "description": [],
         "price": [
             {
@@ -982,7 +982,7 @@
         "sub_service_id": 56,
         "service_type": 7,
         "title": "Руки",
-        "image_url": "",
+        "image_url": "assets/img/subservice57.jpg",
         "description": [],
         "price": [
             {
@@ -995,7 +995,7 @@
         "sub_service_id": 57,
         "service_type": 7,
         "title": "Ноги",
-        "image_url": "",
+        "image_url": "assets/img/subservice58.jpg",
         "description": [],
         "price": [
             {
@@ -1008,7 +1008,7 @@
         "sub_service_id": 58,
         "service_type": 7,
         "title": "Ягодицы",
-        "image_url": "",
+        "image_url": "assets/img/subservice59.jpg",
         "description": [],
         "price": [
             {
@@ -1021,7 +1021,7 @@
         "sub_service_id": 59,
         "service_type": 7,
         "title": "Пах классика",
-        "image_url": "",
+        "image_url": "assets/img/subservice60.jpg",
         "description": [],
         "price": [
             {
@@ -1034,7 +1034,7 @@
         "sub_service_id": 60,
         "service_type": 7,
         "title": "Пах тотал",
-        "image_url": "",
+        "image_url": "assets/img/subservice61.jpg",
         "description": [],
         "price": [
             {
@@ -1047,7 +1047,7 @@
         "sub_service_id": 61,
         "service_type": 7,
         "title": "Противовоспалительная маска",
-        "image_url": "",
+        "image_url": "assets/img/subservice45.jpg",
         "description": [],
         "price": [
             {
@@ -1060,7 +1060,7 @@
         "sub_service_id": 62,
         "service_type": 7,
         "title": "Увлажняющая маска",
-        "image_url": "",
+        "image_url": "assets/img/subservice45.jpg",
         "description": [],
         "price": [
             {
@@ -1073,7 +1073,7 @@
         "sub_service_id": 63,
         "service_type": 7,
         "title": "Энзимный пилинг",
-        "image_url": "",
+        "image_url": "assets/img/subservice47.jpg",
         "description": [],
         "price": [
             {

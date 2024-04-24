@@ -21,6 +21,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const HomeScreen(),
       );
     },
+    SpaAboutUsRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SpaAboutUsScreen(),
+      );
+    },
     SpaAppRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -75,6 +81,20 @@ class HomeRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'HomeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SpaAboutUsScreen]
+class SpaAboutUsRoute extends PageRouteInfo<void> {
+  const SpaAboutUsRoute({List<PageRouteInfo>? children})
+      : super(
+          SpaAboutUsRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SpaAboutUsRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

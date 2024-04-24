@@ -27,11 +27,16 @@ class ServiceListItem extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             image: DecorationImage(
-              image: CachedNetworkImageProvider(
-                imageUrl == ""
-                    ? "https://cs6.pikabu.ru/post_img/2015/07/04/10/1436029898_1190099444.jpg"
-                    : imageUrl,
-              ),
+              image: imageUrl == ""
+                  ? Image.network(
+                          "https://cs6.pikabu.ru/post_img/2015/07/04/10/1436029898_1190099444.jpg")
+                      .image
+                  : Image.asset(imageUrl).image,
+              // image: CachedNetworkImageProvider(
+              //   imageUrl == ""
+              //       ? "https://cs6.pikabu.ru/post_img/2015/07/04/10/1436029898_1190099444.jpg"
+              //       : "assets/img/$imageUrl",
+              // ),
               fit: BoxFit.cover,
             ),
           ),

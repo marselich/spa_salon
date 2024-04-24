@@ -13,14 +13,20 @@ class CartItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final cubit = BlocProvider.of<SpaCartCubit>(context);
     return ListTile(
-      leading: CachedNetworkImage(
-        imageUrl: cartItem.imageUrl == ""
-            ? "https://cs6.pikabu.ru/post_img/2015/07/04/10/1436029898_1190099444.jpg"
-            : cartItem.imageUrl,
+      leading: Image.asset(
+        cartItem.imageUrl,
         fit: BoxFit.cover,
         height: 60,
         width: 65,
       ),
+      // leading: CachedNetworkImage( // TODO
+      //   imageUrl: cartItem.imageUrl == ""
+      //       ? "https://cs6.pikabu.ru/post_img/2015/07/04/10/1436029898_1190099444.jpg"
+      //       : cartItem.imageUrl,
+      //   fit: BoxFit.cover,
+      //   height: 60,
+      //   width: 65,
+      // ),
       title: Text(cartItem.title),
       subtitle: Text("${cartItem.price}₽ ${cartItem.timePeriod}"),
       trailing: IconButton(

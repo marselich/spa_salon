@@ -7,19 +7,33 @@ class OptionCard extends StatelessWidget {
     required this.cardIcon,
     required this.cardName,
     this.curcleColor,
+    required this.onTap,
   });
 
   final IconData cardIcon;
   final String cardName;
   final Color? curcleColor;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Card(
-      color: Colors.white,
-      child: SizedBox(
+    return InkWell(
+      borderRadius: BorderRadius.circular(15),
+      onTap: onTap,
+      splashColor: theme.highlightColor,
+      child: Ink(
         height: 100,
+        decoration: BoxDecoration(
+            color: Colors.white, //theme.colorScheme.onPrimary,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black12,
+                offset: Offset(0, 1.5),
+                blurRadius: 1,
+              ),
+            ]),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

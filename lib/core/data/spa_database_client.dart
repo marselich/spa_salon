@@ -6,7 +6,7 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 class SpaDatabaseClient {
-  static const int DATABASE_VERSION = 1;
+  static const int DATABASE_VERSION = 3;
   static const String DATABASE_NAME = 'spa_salon.db';
   static const String SERIVCES_TABLE_NAME = 'services';
   static const String SUB_SERIVCES_TABLE_NAME = 'sub_services';

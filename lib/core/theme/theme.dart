@@ -16,6 +16,9 @@ final themeData = ThemeData(
       color: const Color(0xFF7E655E),
       fontWeight: FontWeight.bold,
     ),
+    iconTheme: const IconThemeData(
+      color: Color(0xFF7E655E),
+    ),
   ),
   scaffoldBackgroundColor: Colors.grey.shade100,
   bottomAppBarTheme: const BottomAppBarTheme(
